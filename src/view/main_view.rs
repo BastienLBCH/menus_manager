@@ -23,6 +23,7 @@ impl MainController {
         let only_veggie_recipes = self
             .slots_filtering_veggie_recipes
             .contains(&self.slot_currently_in_edition.unwrap());
+
         let filter = {
             if self
                 .filters_on_recipes_slots
@@ -37,11 +38,10 @@ impl MainController {
         let all_recipes = self
             .recipe_service
             .list_recipes(filter, only_veggie_recipes);
-        println!("BLAB - all_recipes : {:#?}", all_recipes);
         let mut all_buttons: Column<Message> = Column::new();
 
         for recipe in all_recipes {
-            all_buttons = all_buttons.push(button(text(recipe)));
+            all_buttons = all_buttons.push(button(text(recipe.clone())).on_press(Message::SelectedRecipe(self.slot_currently_in_edition.unwrap(), recipe)));
         }
         all_buttons = all_buttons.spacing(5);
         all_buttons.into()

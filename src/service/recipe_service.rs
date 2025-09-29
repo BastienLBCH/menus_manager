@@ -26,6 +26,7 @@ impl RecipeService {
             recipe_repository: RecipeRepository::new(),
         }
     }
+
     pub fn load_recipe(&mut self, recipe_file: &Path) -> Recipe {
         let mut file = File::open(recipe_file).unwrap();
         let mut content = String::new();
@@ -89,6 +90,7 @@ impl RecipeService {
         }
         recipe
     }
+
     pub fn load_all_recipes(&mut self) {
         let paths = std::fs::read_dir(RECIPE_DIRECTORY).unwrap();
         for path in paths {
@@ -100,6 +102,10 @@ impl RecipeService {
                 self.recipe_repository.add_recipe(recipe);
             }
         }
+    }
+
+    pub fn find_recipe_by_name(&self, recipe_name: &String) -> Recipe {
+        self.recipe_repository.get_recipe(recipe_name)
     }
 
     pub fn list_recipes(&self, filter: String, only_veggies: bool) -> Vec<String> {

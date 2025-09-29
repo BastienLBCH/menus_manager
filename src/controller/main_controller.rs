@@ -50,6 +50,7 @@ pub enum Message {
     ReturnButtonPressed,
     FilteredSlotRecipe(String),
     FilteringVeggieRecipes(bool),
+    SelectedRecipe(RecipeSlot, String),
 }
 
 pub enum View {
@@ -77,6 +78,10 @@ impl MainController {
             Message::FilteredSlotRecipe(string) => {
                 self.filters_on_recipes_slots
                     .insert(self.slot_currently_in_edition.unwrap(), string);
+            },
+            Message::SelectedRecipe(recipe_slot, recipe) => {
+                let selected_recipe = self.recipe_service.find_recipe_by_name(&recipe);
+                self.selected_recipes.insert(recipe_slot, selected_recipe);
             }
         }
     }

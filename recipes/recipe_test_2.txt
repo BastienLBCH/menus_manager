@@ -1,0 +1,18 @@
+A - RECIPE NAME - 2
+
+4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+1 oignon
+2 carottes
+3 concombres
+4 chipolatas
+
+Emincer les oignons
+Couper les carottes en demi lunes
+Faire cuire les chipolatas
+Aller niquer tes grands morts

@@ -163,7 +163,7 @@ impl MainController {
                 column![
                     text("Lundi"),
                     Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::MondayNoon),
+                    self.generate_recipe_button(RecipeSlot::MondayEvening),
                     Space::with_height(Length::FillPortion(1)),
                 ]
                 .align_x(Alignment::Center),

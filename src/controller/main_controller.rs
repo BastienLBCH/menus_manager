@@ -50,7 +50,8 @@ pub enum Message {
     ReturnButtonPressed,
     FilteredSlotRecipe(String),
     FilteringVeggieRecipes(bool),
-    SelectedRecipe(RecipeSlot, String),
+    SelectedRecipe(RecipeSlot, Option<String>),
+    GenerateRecipeDocument,
 }
 
 pub enum View {
@@ -68,21 +69,36 @@ impl MainController {
             Message::ReturnButtonPressed => self.current_view = View::Main,
             Message::FilteringVeggieRecipes(is_filtering) => {
                 if is_filtering {
-                    self.slots_filtering_veggie_recipes.push(self.slot_currently_in_edition.unwrap());
+                    self.slots_filtering_veggie_recipes
+                        .push(self.slot_currently_in_edition.unwrap());
                 } else {
-                        if let Some(index) = self.slots_filtering_veggie_recipes.iter().position(|value| *value == self.slot_currently_in_edition.unwrap()) {
-                            self.slots_filtering_veggie_recipes.swap_remove(index);
-                        }
+                    if let Some(index) = self
+                        .slots_filtering_veggie_recipes
+                        .iter()
+                        .position(|value| *value == self.slot_currently_in_edition.unwrap())
+                    {
+                        self.slots_filtering_veggie_recipes.swap_remove(index);
+                    }
                 }
-            },
+            }
             Message::FilteredSlotRecipe(string) => {
                 self.filters_on_recipes_slots
                     .insert(self.slot_currently_in_edition.unwrap(), string);
-            },
-            Message::SelectedRecipe(recipe_slot, recipe) => {
-                let selected_recipe = self.recipe_service.find_recipe_by_name(&recipe);
-                self.selected_recipes.insert(recipe_slot, selected_recipe);
             }
+            Message::SelectedRecipe(recipe_slot, recipe) => {
+                if let Some(selected_recipe_name) = recipe {
+                    let selected_recipe = self
+                        .recipe_service
+                        .find_recipe_by_name(&selected_recipe_name);
+                    self.selected_recipes.insert(recipe_slot, selected_recipe);
+                } else {
+                    if self.selected_recipes.contains_key(&recipe_slot) {
+                        self.selected_recipes.remove(&recipe_slot);
+                    }
+                }
+                self.current_view = View::Main;
+            },
+            Message::GenerateRecipeDocument => {}
         }
     }
 }

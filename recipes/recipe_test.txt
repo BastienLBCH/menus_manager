@@ -1,6 +1,6 @@
 RECIPE NAME
 
-4
+Nombre de personnes : 4
 
 # Accepted values :
 # Yes: "true", "yes", "oui", "y", "o", "t"

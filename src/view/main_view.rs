@@ -1,8 +1,8 @@
 use crate::controller::main_controller::Message::ReturnButtonPressed;
 use crate::controller::main_controller::{MainController, Message, RecipeSlot, View};
 use iced::widget::{
-    Button, Column, Space, TextInput, Toggler, button, column, horizontal_rule, pick_list, row,
-    text, text_input, toggler, vertical_rule,
+    Button, Column, Row, Space, TextInput, Toggler, button, column, horizontal_rule,
+    horizontal_space, pick_list, row, text, text_input, toggler, vertical_rule,
 };
 use iced::{Alignment, Element, Length};
 
@@ -41,7 +41,9 @@ impl MainController {
         let mut all_buttons: Column<Message> = Column::new();
 
         for recipe in all_recipes {
-            all_buttons = all_buttons.push(button(text(recipe.clone())).on_press(Message::SelectedRecipe(self.slot_currently_in_edition.unwrap(), recipe)));
+            all_buttons = all_buttons.push(button(text(recipe.clone())).on_press(
+                Message::SelectedRecipe(self.slot_currently_in_edition.unwrap(), Some(recipe)),
+            ));
         }
         all_buttons = all_buttons.spacing(5);
         all_buttons.into()
@@ -73,153 +75,100 @@ impl MainController {
             button("Retour").on_press(ReturnButtonPressed),
             column![
                 row![search_bar, veggie_toggler,].spacing(10),
+                button(" -- AUCUNE RECETTE --").on_press(Message::SelectedRecipe(
+                    self.slot_currently_in_edition.unwrap(),
+                    None
+                )),
                 self.list_all_recipes__as_clickable_buttons(),
-            ].spacing(10),
+            ]
+            .spacing(10),
         ]
         .spacing(10)
         .into()
     }
 
-    pub fn view__main(&self) -> Element<Message> {
+    pub fn generate_recipe_slot(&self, week_day: String, slot: RecipeSlot) -> Column<Message> {
         column![
-            row![
-                column![
-                    Space::with_height(Length::FillPortion(1)),
-                    text("Midi"),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .width(Length::Fixed(50.))
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                // Space::with_width(Length::FillPortion(1)),
-                column![
-                    text("Lundi"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::MondayNoon),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Mardi"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::TuesdayNoon),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Mercredi"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::WednesdayNoon),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Jeudi"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::ThursdayNoon),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Vendredi"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::FridayNoon),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Samedi"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::SaturdayNoon),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Dimanche"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::SundayNoon),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                Space::with_width(Length::Fixed(0.)),
-            ]
-            .spacing(12),
-            horizontal_rule(2),
-            row![
-                column![
-                    Space::with_height(Length::FillPortion(1)),
-                    text("Soir"),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .width(Length::Fixed(50.))
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Lundi"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::MondayEvening),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Mardi"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::TuesdayEvening),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Mercredi"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::WednesdayEvening),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Jeudi"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::ThursdayEvening),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Vendredi"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::FridayEvening),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Samedi"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::SaturdayEvening),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                vertical_rule(2),
-                column![
-                    text("Dimanche"),
-                    Space::with_height(Length::FillPortion(1)),
-                    self.generate_recipe_button(RecipeSlot::SundayEvening),
-                    Space::with_height(Length::FillPortion(1)),
-                ]
-                .align_x(Alignment::Center),
-                Space::with_width(Length::Fixed(0.)),
-            ]
-            .spacing(12)
+            text(week_day),
+            Space::with_height(Length::FillPortion(1)),
+            self.generate_recipe_button(slot),
+            Space::with_height(Length::FillPortion(1)),
         ]
-        .into()
+        .align_x(Alignment::Center)
+    }
+
+    pub fn generate_recipe_slots_row(
+        &self,
+        row_name: String,
+        week_days: [&str; 7],
+        slots: [RecipeSlot; 7],
+    ) -> Row<Message> {
+        let mut recipe_slots_row = Row::new().spacing(12);
+        recipe_slots_row = recipe_slots_row.push(
+            column![
+                Space::with_height(Length::FillPortion(1)),
+                text(row_name),
+                Space::with_height(Length::FillPortion(1)),
+            ]
+            .width(Length::Fixed(50.))
+            .align_x(Alignment::Center),
+        );
+
+        recipe_slots_row = recipe_slots_row.push(vertical_rule(2));
+
+        for i in 0..7 {
+            let week_day = week_days[i].to_string();
+            let slot = slots[i].clone();
+            recipe_slots_row = recipe_slots_row.push(self.generate_recipe_slot(week_day, slot));
+            match i {
+                6 => recipe_slots_row = recipe_slots_row.push(Space::with_width(Length::Fixed(0.))),
+                _ => recipe_slots_row = recipe_slots_row.push(vertical_rule(2)),
+            };
+        }
+        recipe_slots_row
+    }
+
+    pub fn view__main(&self) -> Element<Message> {
+        let week_days: [&str; 7] = [
+            "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche",
+        ];
+        let noon_slots: [RecipeSlot; 7] = [
+            RecipeSlot::MondayNoon,
+            RecipeSlot::TuesdayNoon,
+            RecipeSlot::WednesdayNoon,
+            RecipeSlot::ThursdayNoon,
+            RecipeSlot::FridayNoon,
+            RecipeSlot::SaturdayNoon,
+            RecipeSlot::SundayNoon,
+        ];
+
+        let evening_slots: [RecipeSlot; 7] = [
+            RecipeSlot::MondayEvening,
+            RecipeSlot::TuesdayEvening,
+            RecipeSlot::WednesdayEvening,
+            RecipeSlot::ThursdayEvening,
+            RecipeSlot::FridayEvening,
+            RecipeSlot::SaturdayEvening,
+            RecipeSlot::SundayEvening,
+        ];
+
+        let mut main_view = Column::new();
+        let noon_row = self.generate_recipe_slots_row(String::from("Midi"), week_days, noon_slots);
+        let evening_row =
+            self.generate_recipe_slots_row(String::from("Soir"), week_days, evening_slots);
+
+        main_view = main_view.push(noon_row);
+        main_view = main_view.push(horizontal_rule(2));
+        main_view = main_view.push(evening_row);
+        main_view = main_view.push(horizontal_rule(2));
+        main_view = main_view.push(Space::with_height(Length::Fixed(10.0)));
+        main_view = main_view.push(row![
+            Space::with_width(Length::FillPortion(1)),
+            button("Generate").on_press(Message::GenerateRecipeDocument),
+            Space::with_width(Length::FillPortion(1))
+        ]);
+        main_view = main_view.push(Space::with_height(Length::Fixed(10.0)));
+        main_view.into()
     }
 
     pub fn view(&self) -> Element<Message> {

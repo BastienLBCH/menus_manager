@@ -59,7 +59,9 @@ impl RecipeService {
                     recipe.set_name(recipe_lines[line_number].to_string());
                 },
                 RECIPE_PART__NBR_PERSONS => {
-                    recipe.nbr_persons = current_line.parse::<u8>().unwrap();
+                    let line_parts: Vec<&str> = current_line.split_whitespace().collect();
+                    let nbr_persons_as_str = line_parts[line_parts.len() - 1].trim();
+                    recipe.nbr_persons = nbr_persons_as_str.parse::<u8>().unwrap();
                 },
                 RECIPE_PART__VEGGIE => {
                     let veggie_parts: Vec<&str> = current_line.split_whitespace().collect();
@@ -73,7 +75,7 @@ impl RecipeService {
                 RECIPE_PART__INGREDIENTS => {
                     let ingredient_line_parts: Vec<&str> =
                         current_line.split_whitespace().collect();
-                    let ingredient_quantity = ingredient_line_parts[0].parse::<u8>().unwrap();
+                    let ingredient_quantity = ingredient_line_parts[0].parse::<f32>().unwrap();
                     let ingredient_name = ingredient_line_parts[1];
                     recipe.add_ingredient(Ingredient {
                         name: ingredient_name.to_string(),

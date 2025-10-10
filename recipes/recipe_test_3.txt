@@ -1,11 +1,11 @@
-A - RECIPE NAME - 2
+RECIPEEEE
 
-Nombre de personnes : 4
+Nombre de personnes: 4
 
 # Accepted values :
 # Yes: "true", "yes", "oui", "y", "o", "t"
 # No: "false", "no", "non", "n", "f"
-Veggie: y
+Veggie: non
 
 1 oignon
 2 carottes

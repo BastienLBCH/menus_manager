@@ -42,17 +42,22 @@ impl RecipeService {
         ];
         let mut pattern_index = 0;
         let mut recipe = Recipe::new();
+        let mut previous_turn_was_blank = false;
         for line_number in 0..recipe_lines.len() {
             let position_in_pattern = recipe_pattern[pattern_index];
             let current_line = recipe_lines[line_number].trim();
 
             if current_line == "" {
-                pattern_index = pattern_index + 1;
+                if !previous_turn_was_blank {
+                    pattern_index = pattern_index + 1;
+                }
+                previous_turn_was_blank = true;
                 continue;
             } else if current_line.starts_with("#") {
                 // The line is a comment
                 continue;
             }
+            previous_turn_was_blank = false;
 
             match position_in_pattern {
                 RECIPE_PART__NAME => {

@@ -1,7 +1,6 @@
 pub const WHOLE_INGREDIENT: &str = "__WHOLE_INGREDIENT__";
 
-#[derive(Clone)]
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub struct Ingredient {
     pub name: String,
     pub unit: String,

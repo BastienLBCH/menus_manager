@@ -1,8 +1,9 @@
 use crate::controller::main_controller::Message::ReturnButtonPressed;
 use crate::controller::main_controller::{MainController, Message, RecipeSlot, View};
+use crate::model::weekday::{FRIDAY, MONDAY, SATURDAY, SUNDAY, THURSDAY, TUESDAY, WEDNESDAY};
 use iced::widget::{
-    Button, Column, Row, Space, TextInput, Toggler, button, column, horizontal_rule,
-    horizontal_space, pick_list, row, text, text_input, toggler, vertical_rule,
+    Button, Column, Row, Space, TextInput, Toggler, button, column, horizontal_rule, row, text,
+    text_input, toggler, vertical_rule,
 };
 use iced::{Alignment, Element, Length};
 
@@ -130,7 +131,7 @@ impl MainController {
 
     pub fn view__main(&self) -> Element<Message> {
         let week_days: [&str; 7] = [
-            "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche",
+            MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY,
         ];
         let noon_slots: [RecipeSlot; 7] = [
             RecipeSlot::MondayNoon,

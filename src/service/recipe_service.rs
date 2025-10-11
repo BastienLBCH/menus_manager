@@ -12,9 +12,8 @@ const RECIPE_PART__VEGGIE: &str = "veggie";
 const RECIPE_PART__INGREDIENTS: &str = "ingredients";
 const RECIPE_PART__STEPS: &str = "steps";
 
-const ACCEPTED_BOOLEAN__TRUE: [&str;6] = ["true", "yes", "oui", "y", "o", "t"];
-const ACCEPTED_BOOLEAN__FALSE: [&str;5] = ["false", "no", "non", "n", "f"];
-
+const ACCEPTED_BOOLEAN__TRUE: [&str; 6] = ["true", "yes", "oui", "y", "o", "t"];
+const ACCEPTED_BOOLEAN__FALSE: [&str; 5] = ["false", "no", "non", "n", "f"];
 
 pub struct RecipeService {
     pub recipe_repository: RecipeRepository,
@@ -25,6 +24,33 @@ impl RecipeService {
         RecipeService {
             recipe_repository: RecipeRepository::new(),
         }
+    }
+
+    pub fn gather_all_ingredients_from_recipes_vector(
+        &self,
+        all_recipes: &Vec<Recipe>,
+    ) -> Vec<Ingredient> {
+        let mut ingredients: Vec<Ingredient> = Vec::new();
+
+        for recipe in all_recipes {
+            for ingredient_in_recipe in &recipe.ingredients {
+                let ingredient_already_in_list_index = ingredients.iter().position(|ingr| {
+                    ingr.name == ingredient_in_recipe.name && ingr.unit == ingredient_in_recipe.unit
+                });
+
+                if let Some(ingredient_index) = ingredient_already_in_list_index {
+                    let mut already_existing_ingredient = ingredients[ingredient_index].clone();
+                    ingredients.remove(ingredient_index);
+                    already_existing_ingredient.quantity =
+                        already_existing_ingredient.quantity + ingredient_in_recipe.quantity;
+                    ingredients.push(already_existing_ingredient);
+                } else {
+                    ingredients.push(ingredient_in_recipe.clone());
+                }
+            }
+        }
+
+        ingredients
     }
 
     pub fn load_recipe(&mut self, recipe_file: &Path) -> Recipe {
@@ -62,12 +88,12 @@ impl RecipeService {
             match position_in_pattern {
                 RECIPE_PART__NAME => {
                     recipe.set_name(recipe_lines[line_number].to_string());
-                },
+                }
                 RECIPE_PART__NBR_PERSONS => {
                     let line_parts: Vec<&str> = current_line.split_whitespace().collect();
                     let nbr_persons_as_str = line_parts[line_parts.len() - 1].trim();
                     recipe.nbr_persons = nbr_persons_as_str.parse::<u8>().unwrap();
-                },
+                }
                 RECIPE_PART__VEGGIE => {
                     let veggie_parts: Vec<&str> = current_line.split_whitespace().collect();
                     let str_boolean = veggie_parts[1].trim();
@@ -76,7 +102,7 @@ impl RecipeService {
                     } else if ACCEPTED_BOOLEAN__FALSE.contains(&str_boolean) {
                         recipe.is_veggie = false;
                     }
-                },
+                }
                 RECIPE_PART__INGREDIENTS => {
                     let ingredient_line_parts: Vec<&str> =
                         current_line.split_whitespace().collect();
@@ -88,15 +114,15 @@ impl RecipeService {
                     match ingredient_line_parts.len() {
                         3 => {
                             ingredient_quantity = ingredient_line_parts[0].parse::<f32>().unwrap();
-                            ingredient_unit = ingredient_line_parts[1].to_lowercase();
-                            ingredient_name = ingredient_line_parts[2].to_string();
+                            ingredient_unit = ingredient_line_parts[1].trim().to_string();
+                            ingredient_name = ingredient_line_parts[2].trim().to_string();
                         }
                         2 => {
                             ingredient_quantity = ingredient_line_parts[0].parse::<f32>().unwrap();
                             ingredient_unit = WHOLE_INGREDIENT.to_string();
                             ingredient_name = ingredient_line_parts[1].trim().to_string();
                         }
-                        _ => {continue}
+                        _ => continue,
                     }
 
                     recipe.add_ingredient(Ingredient {
@@ -104,7 +130,7 @@ impl RecipeService {
                         unit: ingredient_unit.to_string(),
                         quantity: ingredient_quantity,
                     });
-                },
+                }
                 RECIPE_PART__STEPS => {
                     recipe.add_step(current_line.to_string());
                 }
@@ -143,13 +169,18 @@ impl RecipeService {
                         recipe_list.push(recipe_name.to_string());
                     }
                 }
-            },
-            false => {
-                recipe_list = self.recipe_repository.list_all_recipes_names()
             }
+            false => recipe_list = self.recipe_repository.list_all_recipes_names(),
         }
         if filter != "" {
-            recipe_list = recipe_list.into_iter().filter(|recipe_name| recipe_name.to_lowercase().starts_with(filter.to_lowercase().as_str())).collect();
+            recipe_list = recipe_list
+                .into_iter()
+                .filter(|recipe_name| {
+                    recipe_name
+                        .to_lowercase()
+                        .starts_with(filter.to_lowercase().as_str())
+                })
+                .collect();
         }
         recipe_list
     }

@@ -154,7 +154,13 @@ impl MainController {
             }
             Message::DecrementedNbrPersonsOfRecipe(recipe_slot, nbr_persons) => {
                 let mut recipe = self.selected_recipes.get(&recipe_slot).unwrap().clone();
-                recipe.configured_nbr_persons = recipe.configured_nbr_persons - nbr_persons;
+                recipe.configured_nbr_persons = {
+                    if recipe.configured_nbr_persons == 0 {
+                        0u8
+                    } else {
+                        recipe.configured_nbr_persons - nbr_persons
+                    }
+                };
                 self.selected_recipes.remove(&recipe_slot);
                 self.selected_recipes.insert(recipe_slot, recipe.clone());
             }

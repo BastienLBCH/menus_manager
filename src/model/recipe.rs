@@ -9,6 +9,10 @@ pub struct Recipe {
     pub steps: Vec<String>,
 }
 
+fn round_to_2_digits(num: f32) -> f32 {
+    (num * 100.0).round() / 100.0
+}
+
 impl Recipe {
     pub fn new() -> Self {
         Recipe {
@@ -34,7 +38,8 @@ impl Recipe {
     pub fn sync_with_configured_nbr_persons(&mut self) {
         for ingredient in self.ingredients.iter_mut() {
             let quantity_for_one_person = ingredient.quantity / self.nbr_persons as f32;
-            ingredient.quantity = (quantity_for_one_person * self.configured_nbr_persons as f32).round();
+            let new_quantity = quantity_for_one_person * self.configured_nbr_persons as f32;
+            ingredient.quantity = round_to_2_digits(new_quantity);
         }
     }
 }

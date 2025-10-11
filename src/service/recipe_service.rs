@@ -1,4 +1,4 @@
-use crate::model::ingredient::Ingredient;
+use crate::model::ingredient::{Ingredient, WHOLE_INGREDIENT};
 use crate::model::recipe::Recipe;
 use crate::repository::recipe_repository::RecipeRepository;
 use std::fs::File;
@@ -80,10 +80,28 @@ impl RecipeService {
                 RECIPE_PART__INGREDIENTS => {
                     let ingredient_line_parts: Vec<&str> =
                         current_line.split_whitespace().collect();
-                    let ingredient_quantity = ingredient_line_parts[0].parse::<f32>().unwrap();
-                    let ingredient_name = ingredient_line_parts[1];
+
+                    let mut ingredient_quantity: f32 = 0.0;
+                    let mut ingredient_unit: String = String::from("");
+                    let mut ingredient_name: String = String::from("");
+
+                    match ingredient_line_parts.len() {
+                        3 => {
+                            ingredient_quantity = ingredient_line_parts[0].parse::<f32>().unwrap();
+                            ingredient_unit = ingredient_line_parts[1].to_lowercase();
+                            ingredient_name = ingredient_line_parts[2].to_string();
+                        }
+                        2 => {
+                            ingredient_quantity = ingredient_line_parts[0].parse::<f32>().unwrap();
+                            ingredient_unit = WHOLE_INGREDIENT.to_string();
+                            ingredient_name = ingredient_line_parts[1].trim().to_string();
+                        }
+                        _ => {continue}
+                    }
+
                     recipe.add_ingredient(Ingredient {
                         name: ingredient_name.to_string(),
+                        unit: ingredient_unit.to_string(),
                         quantity: ingredient_quantity,
                     });
                 },

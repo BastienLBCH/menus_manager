@@ -98,6 +98,8 @@ pub enum Message {
     FilteringVeggieRecipes(bool),
     SelectedRecipe(RecipeSlot, Option<String>),
     GenerateRecipeDocument,
+    IncrementedNbrPersonsOfRecipe(RecipeSlot, u8),
+    DecrementedNbrPersonsOfRecipe(RecipeSlot, u8),
 }
 
 pub enum View {
@@ -144,6 +146,18 @@ impl MainController {
                 }
                 self.current_view = View::Main;
             }
+            Message::IncrementedNbrPersonsOfRecipe(recipe_slot, nbr_persons) => {
+                let mut recipe = self.selected_recipes.get(&recipe_slot).unwrap().clone();
+                recipe.configured_nbr_persons = recipe.configured_nbr_persons + nbr_persons;
+                self.selected_recipes.remove(&recipe_slot);
+                self.selected_recipes.insert(recipe_slot, recipe.clone());
+            }
+            Message::DecrementedNbrPersonsOfRecipe(recipe_slot, nbr_persons) => {
+                let mut recipe = self.selected_recipes.get(&recipe_slot).unwrap().clone();
+                recipe.configured_nbr_persons = recipe.configured_nbr_persons - nbr_persons;
+                self.selected_recipes.remove(&recipe_slot);
+                self.selected_recipes.insert(recipe_slot, recipe.clone());
+            }
             Message::GenerateRecipeDocument => {
                 let mut week_days_to_print: Vec<WeekDay> = Vec::new();
                 let noon_slots: [RecipeSlot; 7] = [
@@ -157,6 +171,8 @@ impl MainController {
                 ];
 
                 for (recipe_slot, recipe) in self.selected_recipes.iter() {
+                    let mut recipe = recipe.clone();
+                    recipe.sync_with_configured_nbr_persons();
                     for week_day in self.week_days.iter_mut() {
                         let mut week_day = week_day.clone();
                         let mut should_write_day = false;

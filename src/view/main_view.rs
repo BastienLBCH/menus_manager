@@ -1,23 +1,40 @@
-use crate::controller::main_controller::Message::ReturnButtonPressed;
+use crate::controller::main_controller::Message::{DecrementedNbrPersonsOfRecipe, IncrementedNbrPersonsOfRecipe, ReturnButtonPressed};
 use crate::controller::main_controller::{MainController, Message, RecipeSlot, View};
+use crate::model::recipe::Recipe;
 use crate::model::weekday::{FRIDAY, MONDAY, SATURDAY, SUNDAY, THURSDAY, TUESDAY, WEDNESDAY};
-use iced::widget::{
-    Button, Column, Row, Space, TextInput, Toggler, button, column, horizontal_rule, row, text,
-    text_input, toggler, vertical_rule,
-};
+use iced::widget::{button, column, horizontal_rule, row, text, text_input, toggler, vertical_rule, Button, Column, Row, Space, TextInput, Toggler};
 use iced::{Alignment, Element, Length};
 
 impl MainController {
-    pub fn generate_recipe_button(&self, slot: RecipeSlot) -> Button<Message> {
+    pub fn generate_recipe_selector(&self, recipe_slot: RecipeSlot) -> Element<Message> {
         let mut button_name = String::new();
-        if self.selected_recipes.contains_key(&slot) {
-            button_name = self.selected_recipes[&slot].name.clone()
+        let mut selected_recipe: Option<Recipe> = None;
+        if self.selected_recipes.contains_key(&recipe_slot) {
+            selected_recipe = Some(self.selected_recipes[&recipe_slot].clone());
+            button_name = self.selected_recipes[&recipe_slot].name.clone()
         } else {
             button_name = "Sélectionnez une recette".to_string()
         }
-        button(text(button_name))
-            .on_press(Message::SelectedRecipeSlot(slot))
-            .width(Length::Fill)
+
+        let select_recipe_button: Button<Message> = Button::new(text(button_name))
+            .on_press(Message::SelectedRecipeSlot(recipe_slot))
+            .width(Length::Fill);
+
+
+        if let Some(selected_recipe) = selected_recipe {
+            column![
+                select_recipe_button,
+                row![
+                    text(format!("Pour: {}", selected_recipe.configured_nbr_persons.to_string())),
+                    column![
+                        button("+").on_press(IncrementedNbrPersonsOfRecipe(recipe_slot, 1)),
+                        button("-").on_press(DecrementedNbrPersonsOfRecipe(recipe_slot, 1)),
+                    ]
+                ]
+            ].into()
+        } else {
+            select_recipe_button.into()
+        }
     }
 
     pub fn list_all_recipes__as_clickable_buttons(&self) -> Element<Message> {
@@ -88,11 +105,12 @@ impl MainController {
         .into()
     }
 
-    pub fn generate_recipe_slot(&self, week_day: String, slot: RecipeSlot) -> Column<Message> {
+    pub fn generate_recipe_slot(&self, week_day: String, recipe_slot: RecipeSlot) -> Column<Message> {
+
         column![
             text(week_day),
             Space::with_height(Length::FillPortion(1)),
-            self.generate_recipe_button(slot),
+            self.generate_recipe_selector(recipe_slot),
             Space::with_height(Length::FillPortion(1)),
         ]
         .align_x(Alignment::Center)
@@ -102,7 +120,7 @@ impl MainController {
         &self,
         row_name: String,
         week_days: [&str; 7],
-        slots: [RecipeSlot; 7],
+        recipe_slots: [RecipeSlot; 7],
     ) -> Row<Message> {
         let mut recipe_slots_row = Row::new().spacing(12);
         recipe_slots_row = recipe_slots_row.push(
@@ -119,8 +137,8 @@ impl MainController {
 
         for i in 0..7 {
             let week_day = week_days[i].to_string();
-            let slot = slots[i].clone();
-            recipe_slots_row = recipe_slots_row.push(self.generate_recipe_slot(week_day, slot));
+            let recipe_slot = recipe_slots[i].clone();
+            recipe_slots_row = recipe_slots_row.push(self.generate_recipe_slot(week_day, recipe_slot));
             match i {
                 6 => recipe_slots_row = recipe_slots_row.push(Space::with_width(Length::Fixed(0.))),
                 _ => recipe_slots_row = recipe_slots_row.push(vertical_rule(2)),

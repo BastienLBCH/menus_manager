@@ -3,6 +3,7 @@ use crate::model::ingredient::Ingredient;
 pub struct Recipe {
     pub name: String,
     pub nbr_persons: u8,
+    pub configured_nbr_persons: u8,
     pub is_veggie: bool,
     pub ingredients: Vec<Ingredient>,
     pub steps: Vec<String>,
@@ -13,6 +14,7 @@ impl Recipe {
         Recipe {
             name: "".to_string(),
             nbr_persons: 1,
+            configured_nbr_persons: 1,
             is_veggie: false,
             ingredients: Vec::new(),
             steps: Vec::new(),
@@ -27,5 +29,12 @@ impl Recipe {
     }
     pub fn add_step(&mut self, step: String) {
         self.steps.push(step);
+    }
+
+    pub fn sync_with_configured_nbr_persons(&mut self) {
+        for ingredient in self.ingredients.iter_mut() {
+            let quantity_for_one_person = ingredient.quantity / self.nbr_persons as f32;
+            ingredient.quantity = (quantity_for_one_person * self.configured_nbr_persons as f32).round();
+        }
     }
 }

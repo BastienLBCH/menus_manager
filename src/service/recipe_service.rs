@@ -33,6 +33,8 @@ impl RecipeService {
         let mut ingredients: Vec<Ingredient> = Vec::new();
 
         for recipe in all_recipes {
+            let mut recipe = recipe.clone();
+            recipe.sync_with_configured_nbr_persons();
             for ingredient_in_recipe in &recipe.ingredients {
                 let ingredient_already_in_list_index = ingredients.iter().position(|ingr| {
                     ingr.name == ingredient_in_recipe.name && ingr.unit == ingredient_in_recipe.unit
@@ -93,6 +95,7 @@ impl RecipeService {
                     let line_parts: Vec<&str> = current_line.split_whitespace().collect();
                     let nbr_persons_as_str = line_parts[line_parts.len() - 1].trim();
                     recipe.nbr_persons = nbr_persons_as_str.parse::<u8>().unwrap();
+                    recipe.configured_nbr_persons = nbr_persons_as_str.parse::<u8>().unwrap();
                 }
                 RECIPE_PART__VEGGIE => {
                     let veggie_parts: Vec<&str> = current_line.split_whitespace().collect();

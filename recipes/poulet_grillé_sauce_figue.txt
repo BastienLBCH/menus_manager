@@ -1,0 +1,36 @@
+Poulet grillé sauce à la figue
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+1 : kg : pommes_de_terre_grenaille
+2 : carottes
+4 : oignons
+1 : sachet persil
+4 : cuisses_de_poulet
+2 : sachets noix_concassées
+5 : cs : confiture_de_figue
+200 : ml : bouillon_de_volaille
+4 : cc : huile_olive
+2 : cc : vinaigre_balsamique_noir
+1 : cs : farine
+4 : cc : beurre
+
+Préchauffer four à 210°C.
+Couper les carottes en demi lunes.
+Laver et couper les grenailles en 4 (ou 6 pour les plus grosses).
+Ciseler l'oignon et le persil (éfeuiller le persil avant).
+Mettre les carottes et grenailles dans un plat allant au four, les mélanger avec un filet d'huile d'olive, du sel et du poivre. Laisser cuire 10min.
+Lorsqu'il reste 5 minutes de cuisson aux légumes, faire dorer à la poele les cuisses de poulet côté peau (4 à 6min). Couper le feu et réserver la poele.
+Ajouter les cuisses de poulet avec les légumes.
+Prolonger la cuisson de 30minutes.
+Lorsqu'il reste 10min de cuisson, remettre la poele à chauffer à feu moyen-vif avec un petit filer d'huile d'olive.
+Ajouter l'oignon et les noix, faire revenir 3-4 minutes.
+Ajouter la confiture de figue, le vinaigre balsamique et la farine.
+Remuer quelques secondes puis ajouter le bouillon.
+Faire réduire la sauce quelques minutes ou jusqu'à ce qu'elle soit nappante. Si la sauce réduit trop vite ajouter un peu d'eau.
+Servir et manger.

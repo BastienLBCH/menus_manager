@@ -108,7 +108,7 @@ impl RecipeService {
                 }
                 RECIPE_PART__INGREDIENTS => {
                     let ingredient_line_parts: Vec<&str> =
-                        current_line.split_whitespace().collect();
+                        current_line.split(":").collect();
 
                     let mut ingredient_quantity: f32 = 0.0;
                     let mut ingredient_unit: String = String::from("");
@@ -116,12 +116,12 @@ impl RecipeService {
 
                     match ingredient_line_parts.len() {
                         3 => {
-                            ingredient_quantity = ingredient_line_parts[0].parse::<f32>().unwrap();
+                            ingredient_quantity = ingredient_line_parts[0].trim().parse::<f32>().unwrap();
                             ingredient_unit = ingredient_line_parts[1].trim().to_string();
                             ingredient_name = ingredient_line_parts[2].trim().to_string();
                         }
                         2 => {
-                            ingredient_quantity = ingredient_line_parts[0].parse::<f32>().unwrap();
+                            ingredient_quantity = ingredient_line_parts[0].trim().parse::<f32>().unwrap();
                             ingredient_unit = WHOLE_INGREDIENT.to_string();
                             ingredient_name = ingredient_line_parts[1].trim().to_string();
                         }

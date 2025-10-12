@@ -1,0 +1,19 @@
+Brunch
+
+Nombre de personnes : 2
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+2 : œufs
+250 : g : truite fumée
+1 : boite rillettes
+1 : sachet pain-de-mie
+1 : fromage
+1 : motte beure-doux
+1 : motte beure-salé
+1 : jambon_de_pays
+
+Manger tous les ingrédients

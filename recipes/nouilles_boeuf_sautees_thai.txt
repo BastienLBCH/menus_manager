@@ -1,0 +1,24 @@
+Nouilles au bœuf sautées à la thai
+
+Nombre de personnes: 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+400 : g : nouilles de blé
+1 : carotte
+4 : gousses d'ail
+1 : botte cébette
+0.5 : piment
+1 : sachet cacahuètes non salées
+1 : citron
+1 : sachet coriandre
+1 : sachet menthe
+800 : g : viande hachée bœuf
+40 : ml : sauce soja salée
+40 : ml : sauce soja sucrée OU sauce teriyaki wok
+2 : cs : huile tournesol
+
+À VENIR

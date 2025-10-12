@@ -1,0 +1,23 @@
+Lieu noir & sauce romanesco
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+1 : kg : pommes de terre
+2 : échalottes
+2 : gousses d'ail
+500 : g : tomates cerises rouges
+1 : sachet : amandes entières grillées non salées
+1 : thym séché
+500 : g : brocoli
+4 : filets de lieu noir
+3 : cc : beurre
+2 : cs : huile d'olive
+2 : cs : Vinaigre de vin rouge ou de cidre
+
+
+À VENIR

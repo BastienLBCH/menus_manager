@@ -9,11 +9,11 @@ Veggie: non
 
 2 : œufs
 250 : g : truite fumée
-1 : boite rillettes
-1 : sachet pain-de-mie
+1 : boite : rillettes
+3 : tranches : pain-de-mie
 1 : fromage
-1 : motte beure-doux
-1 : motte beure-salé
-1 : jambon_de_pays
+1 : motte : beure-doux
+1 : motte : beure-salé
+4 : tranches : jambon_de_pays
 
 Manger tous les ingrédients

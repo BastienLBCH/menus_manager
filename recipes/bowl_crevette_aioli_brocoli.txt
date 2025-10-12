@@ -1,0 +1,18 @@
+Bowl crevettes, aïoli à l'ail des ours & brocoli
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+1 : kg : Pommes de terre
+700 : g : brocoli
+30 : g : ail des ours
+5 : g : persil plat
+40 : g : fromage italien râpé
+100 : g : mayonnaise
+320 : g : crevettes
+
+À VENIR

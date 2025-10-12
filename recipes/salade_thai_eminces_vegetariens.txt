@@ -1,0 +1,25 @@
+Salade Thaï aux émincés végétariens
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+8 : gousse d'ail
+2 : cm : gingembre frais
+1 : citron vert
+40 : ml : sauce soja sucrée
+40 : g : gomasio
+40 : ml : sauce soja salée
+400 : g : émincés végétariens
+2 : concombre
+2 : oignon rouge
+40 : g : cacahuètes non salées
+4 : tomates
+6 : g : coriandre
+400 : g : nouilles udon fraiches
+0.5 : piment oiseau
+
+À VENIR

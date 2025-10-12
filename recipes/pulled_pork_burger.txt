@@ -1,0 +1,37 @@
+Pulled Pork Burger
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+750 : g : Patates douces
+500 : g : Pommes de terre
+1 : Paprika fumé en poudre
+2 : oignons
+800 : g : effiloché de porc
+1 : sauce bbq
+4 : pains burger
+200 : g : mayonnaise
+150 : g : Cheddar râpé
+120 : g : salade
+1 : huile d'olive
+1 : beurre
+4 : cs : Vinaigre balsamique noir
+
+Préchauffer four à 190°C chaleur tournante.
+Faire des frites avec les patates douces et les pommes de terre.
+Dans un plat allant au four mélanger les frites avec un filet d'huile d'olive et une bonne dose de paprika
+Enfourner entre 18 et 25 minutes ou jusqu'à ce qu'elles soient dorées
+Couper les oignon en demi lunes
+Faire suer les oignon avec une noix de beurre
+Déglacer avec le vinaigre balsamique et un peu d'eau
+Couvrir et laisser confire à feu moyen - doux 3 à 5 minutes.
+Avec une noix de beurre faire sauter l'effiloché de porc. Ajouter de la sauce bbq et un peu d'eau.
+Couvrir et laisser mijoter 6 - 10 min à feu moyen-doux. Saler et poivrer
+Couper les pains à burger en deux et sur chaque face étaler de la mayonnaise.
+Répartir sur les pains l'effiloché de porc et les oignons confits
+Saupoudrer de cheddar râpé
+Manger !!

@@ -5,22 +5,22 @@ Nombre de personnes : 4
 # Accepted values :
 # Yes: "true", "yes", "oui", "y", "o", "t"
 # No: "false", "no", "non", "n", "f"
-Veggie: y
+Veggie: non
 
-1 : kg : pommes_de_terre_grenaille
+1 : kg : pommes de terre grenaille
 2 : carottes
 4 : oignons
 1 : sachet persil
-4 : cuisses_de_poulet
-2 : sachets noix_concassées
-5 : cs : confiture_de_figue
-200 : ml : bouillon_de_volaille
-4 : cc : huile_olive
-2 : cc : vinaigre_balsamique_noir
+4 : cuisses de poulet
+2 : sachets noix concassées
+5 : cs : confiture de figue
+200 : ml : bouillon de volaille
+4 : cc : huile olive
+2 : cc : vinaigre balsamique_noir
 1 : cs : farine
 4 : cc : beurre
 
-Préchauffer four à 210°C.
+Préchauffer four à 190°C chaleur tournante.
 Couper les carottes en demi lunes.
 Laver et couper les grenailles en 4 (ou 6 pour les plus grosses).
 Ciseler l'oignon et le persil (éfeuiller le persil avant).

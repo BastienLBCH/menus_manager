@@ -1,0 +1,26 @@
+Taboulé libanais au boulgour
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+1 : bouquet : menthe fraîche
+1 : pincée : sel
+1 : pincée : poivre
+1 : bouquet : poivre
+100 : g : boulghour
+0.5 : concombre
+3 : cs : citron
+3 : oignons nouveaux
+
+Verser le boulghour dans une jatte. Le couvrir d’eau bouillante à hauteur.
+Le laisser gonfler 10 min en remuant de temps en temps. Puis l’égoutter soigneusement et l’étaler dans un grand plat pour le faire sécher et refroidir.
+Pendant ce temps, laver les herbes puis les effeuiller et les ciseler finement.
+Dans un saladier, mélanger les oignons nouveaux émincés (ou cébettes), le demi-concombre coupé en dés (ou 2 petits concombres libanais), le boulghour et les herbes ciselées.
+Dans un bol, mélanger le jus de citron avec du sel et du poivre puis émulsionner avec l’huile d’olive. Verser le tout sur le taboulé et mélanger.
+Couvrir le saladier de film alimentaire et réserver 1 h au réfrigérateur.
+Mélanger de nouveau avant de servir.
+Conseil : Le concombre libanais (“baladi” ou “beit alpha”), deux fois plus petit que le concombre classique, ne contient pas de graines et n’a pas besoin d’être pelé car sa peau est tendre et fine.

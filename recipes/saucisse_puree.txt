@@ -1,0 +1,15 @@
+Saucisse purée
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+8 : saucisses
+1 : kg : pomme de terre
+30 : g : beurre doux
+50 : cl : lait
+
+À VENIR

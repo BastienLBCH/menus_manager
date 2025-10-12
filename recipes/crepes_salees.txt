@@ -1,0 +1,21 @@
+Crêpes salées
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+4 : oeufs
+50 : cl : lait 
+200 : g : farine 
+200 : g : lardon
+400 : g : champignons
+200 : g : emmental
+4 : tranches : jambon
+8 : cs : sauce tomate panzani
+8 : cs : béchamel
+
+
+À venir

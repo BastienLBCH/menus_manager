@@ -1,0 +1,23 @@
+Hamburger simple
+
+Nombre de personnes : 2
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+1 : salade
+1 : tomate
+3 : oignons
+2 : steak hachés de boeuf
+4 : tranches : cheddar
+2 : cs : ketchup
+2 : cs : sauce BBQ
+2 : cc : harissa
+4 : cornichons
+2 : portions : frites (pomme de terre)
+2 : cs : vinaigre balsamique
+
+À VENIR
+

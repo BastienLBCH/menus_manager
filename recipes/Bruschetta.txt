@@ -1,0 +1,24 @@
+Bruschetta
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+4 : tranches : pain
+8 : échalotes 
+2 : mozza
+1 : sachet : roquette
+6 : cs : vinaigre balsamique
+4 : cc : herbes de provinces
+6 : cs : miel
+2 : cc : origan
+150 : g : parmesan en copeaux
+2 : paquets : jambon de pays 
+
+À VENIR
+
+
+

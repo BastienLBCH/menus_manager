@@ -74,9 +74,8 @@ impl RecipeService {
         for line_number in 0..recipe_lines.len() {
             let position_in_pattern = recipe_pattern[pattern_index];
             let current_line = recipe_lines[line_number].trim();
-
             if current_line == "" {
-                if !previous_turn_was_blank {
+                if !previous_turn_was_blank && pattern_index < (recipe_pattern.len()-1) {
                     pattern_index = pattern_index + 1;
                 }
                 previous_turn_was_blank = true;

@@ -1,0 +1,28 @@
+Fajitas
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: n
+
+1 : kg : poulet
+3 : poivrons
+2 : oignons
+12 : galettes fajitas
+1 : pot : mélange sauce tomate farinas tout fait
+20 : cl : crème fraîche
+1 : pot : guacamole de piccard
+2 : avocats
+
+
+
+Verser le boulghour dans une jatte. Le couvrir d’eau bouillante à hauteur.
+Le laisser gonfler 10 min en remuant de temps en temps. Puis l’égoutter soigneusement et l’étaler dans un grand plat pour le faire sécher et refroidir.
+Pendant ce temps, laver les herbes puis les effeuiller et les ciseler finement.
+Dans un saladier, mélanger les oignons nouveaux émincés (ou cébettes), le demi-concombre coupé en dés (ou 2 petits concombres libanais), le boulghour et les herbes ciselées.
+Dans un bol, mélanger le jus de citron avec du sel et du poivre puis émulsionner avec l’huile d’olive. Verser le tout sur le taboulé et mélanger.
+Couvrir le saladier de film alimentaire et réserver 1 h au réfrigérateur.
+Mélanger de nouveau avant de servir.
+Conseil : Le concombre libanais (“baladi” ou “beit alpha”), deux fois plus petit que le concombre classique, ne contient pas de graines et n’a pas besoin d’être pelé car sa peau est tendre et fine.

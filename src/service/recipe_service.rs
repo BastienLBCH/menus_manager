@@ -2,6 +2,7 @@ use crate::model::ingredient::{Ingredient, WHOLE_INGREDIENT};
 use crate::model::recipe::Recipe;
 use crate::repository::recipe_repository::RecipeRepository;
 use std::fs::File;
+use std::io;
 use std::io::Read;
 use std::path::Path;
 
@@ -56,9 +57,9 @@ impl RecipeService {
     }
 
     pub fn load_recipe(&mut self, recipe_file: &Path) -> Recipe {
-        let mut file = File::open(recipe_file).unwrap();
+        let mut file = File::open(recipe_file).expect(format!("Failed to open recipe file : {}", recipe_file.display()).as_str());
         let mut content = String::new();
-        file.read_to_string(&mut content).unwrap();
+        file.read_to_string(&mut content).expect(format!("Failed to read recipe file : {}", recipe_file.display()).as_str());
         let recipe_lines: Vec<&str> = content.split("\n").collect();
 
         let recipe_pattern = [
@@ -93,8 +94,8 @@ impl RecipeService {
                 RECIPE_PART__NBR_PERSONS => {
                     let line_parts: Vec<&str> = current_line.split_whitespace().collect();
                     let nbr_persons_as_str = line_parts[line_parts.len() - 1].trim();
-                    recipe.nbr_persons = nbr_persons_as_str.parse::<u8>().unwrap();
-                    recipe.configured_nbr_persons = nbr_persons_as_str.parse::<u8>().unwrap();
+                    recipe.nbr_persons = nbr_persons_as_str.parse::<u8>().expect(format!("Failed to load the number of person this recipe is for from line \"{}\" in file {}", current_line, recipe_file.display()).as_str());
+                    recipe.configured_nbr_persons = recipe.nbr_persons.clone();
                 }
                 RECIPE_PART__VEGGIE => {
                     let veggie_parts: Vec<&str> = current_line.split_whitespace().collect();
@@ -115,12 +116,12 @@ impl RecipeService {
 
                     match ingredient_line_parts.len() {
                         3 => {
-                            ingredient_quantity = ingredient_line_parts[0].trim().parse::<f32>().unwrap();
+                            ingredient_quantity = ingredient_line_parts[0].trim().parse::<f32>().expect(format!("Failed to load the ingredient from line \"{}\" in file {}", current_line, recipe_file.display()).as_str());
                             ingredient_unit = ingredient_line_parts[1].trim().to_string();
                             ingredient_name = ingredient_line_parts[2].trim().to_string();
                         }
                         2 => {
-                            ingredient_quantity = ingredient_line_parts[0].trim().parse::<f32>().unwrap();
+                            ingredient_quantity = ingredient_line_parts[0].trim().parse::<f32>().expect(format!("Failed to load the ingredient from line \"{}\" in file {}", current_line, recipe_file.display()).as_str());
                             ingredient_unit = WHOLE_INGREDIENT.to_string();
                             ingredient_name = ingredient_line_parts[1].trim().to_string();
                         }

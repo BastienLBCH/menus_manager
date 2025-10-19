@@ -1,0 +1,33 @@
+Velouté de potimarron Etchebest
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+1 : oignon
+2 : gousses d'ail
+700 : g : potimarron (ou légume de saison)
+1 : cs : huile d'olive
+50 : cl : fond blanc de volaille OU bouillon de légume OU eau
+50 : cl : crème liquide (optionnel)
+60 : g : beurre (optionnel)
+1 : sel
+1 : poivre
+3 : pincées de piment espelette
+
+Émincer l'oignon (grossièrement)
+Laver le potimarron à l'eau claire
+Couper le potimarron en quarts
+Enlever les pépins
+Couper les quarts en deux
+Couper le potimarron en morceaux
+Faire suer les oignons dans du beurre à feu moyen +
+Rajouter les morceaux de potimarron
+Assaisoner avec le piment d'espelette et deux pincées de gros sel
+Ajouter le bouillon de volaille
+Laisser cuire 25~30 minutes à feu doux
+Mixer le velouté
+Ajouter le beurre et la crème liquide (dans le mixeur)

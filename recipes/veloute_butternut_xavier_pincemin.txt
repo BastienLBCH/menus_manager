@@ -1,0 +1,26 @@
+Velouté de potimarron Etchebest
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+700 : g : butternut (ou légume de saison)
+50 : g : beurre
+50 : cl : bouillon de volaille 
+100 : g : parmesan entier
+1 : bouquet de sauje (optionnel)
+
+Couper les extrémités des butternut
+Couper les butternut en deux au niveau du "bassin"
+Éplucher les butternuts
+Couper le bas du butternut en deux et enlever les pépins avec une cuillière
+Couper les butternuts en cubes
+Faire fondre les cubes de butternut avec du beurre et un peu de sel (couvrir)
+Couper le parmesan en cubes de la même dimension que les cubes de butternut
+Une fois que le butternut est fondant laisser évacuer l'eau
+Une fois qu'il y a une texture de purée ajouter les cubes de parmesan
+Quand ça bout mixer le butternut
+Optionnel : faire frire les feuilles de sauje dans du beurre et ajouter le beurre et quelques feuilles au velouté

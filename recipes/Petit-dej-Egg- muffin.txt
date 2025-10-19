@@ -1,0 +1,28 @@
+Egg Muffin
+
+Nombre de personnes : 5
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+5 : muffins (ou pain bagel etc…) 
+5 : tranches : cheddar 
+5 : tranches : bacon
+1 : bloc : féta
+8 : œufs 
+20 : tomates cerises 
+1 : cc : ail + piment d’espelette
+1 : cs : huile d’olive 
+Basilic
+1 : avocat 
+1 : cs : mayonnaise 
+1 : filet : citron vert 
+
+Recette pour 6 cookies 
+Préchauffez le four à 180°C.
+Cassez les oeufs dans un bol, versez le skyr et fouettez bien. Réservez.
+Dans un plus grand saladier, mélangez la farine, les graines de lin moulues, le sel fin, les épices et la poudre à lever. 
+Ajoutez ensuite les « toppings » : les 50gr de fromage râpé, les tomates séchées préalablement émincées, le basilic grossièrement ciselé, et les tranches de jambon de poulet découpées en cubes. Re-mélangez encore et versez le mélange oeufs-skyr par dessus. Touillez bien à la spatule jusqu’à former un mélange homogène.
+Faites 6 tas ronds sur une plaque recouverte de papier cuisson (env. 110gr de pâte pour chaque cookie), saupoudrez des 20gr de fromage râpé restants et enfournez env. 15min.

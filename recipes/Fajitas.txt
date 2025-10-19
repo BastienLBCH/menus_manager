@@ -5,7 +5,7 @@ Nombre de personnes : 4
 # Accepted values :
 # Yes: "true", "yes", "oui", "y", "o", "t"
 # No: "false", "no", "non", "n", "f"
-Veggie: n
+Veggie: non
 
 1 : kg : poulet
 3 : poivrons
@@ -15,8 +15,6 @@ Veggie: n
 20 : cl : crème fraîche
 1 : pot : guacamole de piccard
 2 : avocats
-
-
 
 Verser le boulghour dans une jatte. Le couvrir d’eau bouillante à hauteur.
 Le laisser gonfler 10 min en remuant de temps en temps. Puis l’égoutter soigneusement et l’étaler dans un grand plat pour le faire sécher et refroidir.

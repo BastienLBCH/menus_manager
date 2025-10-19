@@ -1,0 +1,29 @@
+Feuilleté courgettes et saumon
+
+Nombre de personnes : 3
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+2 : courgettes moyennes
+2 : pâte feuilletée ou brisée
+200 : g : saumon fumé / jambon de cochon / tranches de poulet
+100 : g : fromage frais type Philadelphia (ou Boursin ou chèvre)
+1 : poignée : fromage râpée
+1 : jaune d'oeuf
+1 : Graines de sésames
+1 : Ail en poudre
+1 : Paprika
+1 : Persil séché
+1 : Sel et poivre
+
+Rape courgette
+Essore avec torchon
+Ajoute fromage râpé + épices + filet huile d'olive
+Ouvrir une pâte et étaler fromage frais
+Ajoute les courgettes dessus + les tranches de saumon
+Coupe en trois la pâte dans la longueur avec rouleau et plis en trois chacune des longueurs
+Applique jaune d'oeuf sur les pâtes et ajoute qqes graines de sésame
+Au four à 180° pendant 45 min (mais peut-être ne pas faire le pliage en trois car bcp de commentaires qui disent que la pâte n'est pas cuite).

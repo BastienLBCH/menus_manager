@@ -1,0 +1,25 @@
+Blanc de poulet maison
+
+Nombre de personnes : 8
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+500 : g : filet de poulet
+135 : ml : eau
+85 : g : maïzena 
+1 : cc : paprika 
+1 : cc : ail en poudre
+1 : cc : basilic séché
+1 : cc : piment doux
+1 : cs : sel
+1 : cc : poivre
+
+Mettre tous les ingrédient dans un mixeur blender (ou mixeur plongeur) jusqu'à obtention pâte lisse
+Met les épices sur un papier de film alimentaire puis étale le mélange dessus (peut utiliser tissus, torchon)
+Plis le tout pour former boudin et remet le tout dans du papier alu
+Cuisson vapeur pendant 1h (lui a mis passoire sur cocotte et recouvert d'un couvercle en verre).
+Laisse refroidir pendant 6h 
+Peut ensuite découper des fines tranches.

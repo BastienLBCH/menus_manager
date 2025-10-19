@@ -1,0 +1,20 @@
+Tartines champignons & mascarpone aux herbes
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+400 : g : champignons de Paris
+2 : gousses d'ail
+2 : oignons
+1 : citron
+1 : bouquet de persil plat
+1 : bouquet de ciboulette
+100 : g : mascarpone
+160 : g : crème épaisse
+400 : g : salade
+
+HELLO FRESH

@@ -1,0 +1,28 @@
+Frittata cookies
+
+Nombre de personnes : 6
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+4 : oeufs
+120 : g : skyr
+160 : g : poudre d'amande 
+20 : g : graine de lin moulues
+1 : cc : poudre à lever
+0.5 : cc : sel
+70 : g : emmental ou compté
+90 : g : jambon de poulet
+1 : botte : basilic frais
+5 : tomates séchées à l'huile
+1 : Origan
+1 : Ail en poudre
+
+Recette pour 6 cookies 
+Préchauffez le four à 180°C.
+Cassez les oeufs dans un bol, versez le skyr et fouettez bien. Réservez.
+Dans un plus grand saladier, mélangez la farine, les graines de lin moulues, le sel fin, les épices et la poudre à lever. 
+Ajoutez ensuite les « toppings » : les 50gr de fromage râpé, les tomates séchées préalablement émincées, le basilic grossièrement ciselé, et les tranches de jambon de poulet découpées en cubes. Re-mélangez encore et versez le mélange oeufs-skyr par dessus. Touillez bien à la spatule jusqu’à former un mélange homogène.
+Faites 6 tas ronds sur une plaque recouverte de papier cuisson (env. 110gr de pâte pour chaque cookie), saupoudrez des 20gr de fromage râpé restants et enfournez env. 15min.

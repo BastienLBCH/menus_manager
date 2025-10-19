@@ -1,0 +1,23 @@
+Poulet curry coco et butternut
+
+Nombre de personnes : 1
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+60 : g : risonis crus ou riz risotto
+150 : g : blanc de poulet
+150 : g : butternut en cube 
+0.25 : oignons émincés
+0.5 : ail hachée
+0.75 : cc : curry
+100 : ml : crème de coco
+120 : ml : bouillon de légume chaud
+1 : Sel et poivre
+
+Mettre tous les ingrédient dans un plat en verre (1 plat = 1 personne)
+Assaisonner avec ail, curry, sel & poivre
+Verser la crème + bouillon, bien mélanger
+Au four à 180° pendant 40 min (touiller à mi-cuisson)

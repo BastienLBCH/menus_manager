@@ -5,8 +5,8 @@ use crate::controller::main_controller::{MainController, Message, RecipeSlot, Vi
 use crate::model::recipe::Recipe;
 use crate::model::weekday::{FRIDAY, MONDAY, SATURDAY, SUNDAY, THURSDAY, TUESDAY, WEDNESDAY};
 use iced::widget::{
-    Button, Column, Row, Space, TextInput, Toggler, button, column, horizontal_rule, row, text,
-    text_input, toggler, vertical_rule,
+    Button, Column, Row, Space, TextInput, Toggler, button, column, horizontal_rule, row,
+    scrollable, text, text_input, toggler, vertical_rule,
 };
 use iced::{Alignment, Element, Length};
 
@@ -63,19 +63,26 @@ impl MainController {
             .on_toggle(Message::FilteringVeggieRecipes)
             .label("Seulement les recettes végétariennes");
 
-        row![
-            button("Retour").on_press(ReturnButtonPressed),
-            column![
-                row![search_bar, veggie_toggler,].spacing(10),
-                button(" -- AUCUNE RECETTE --").on_press(Message::SelectedRecipe(
-                    self.slot_currently_in_edition.unwrap(),
-                    None
-                )),
-                self.list_all_recipes__as_clickable_buttons(),
+        scrollable(
+            row![
+                button("Retour").on_press(ReturnButtonPressed),
+                column![
+                    row![
+                        search_bar,
+                        veggie_toggler,
+                        Space::with_width(Length::Fixed(10.0)),
+                    ]
+                    .spacing(10),
+                    button(" -- AUCUNE RECETTE --").on_press(Message::SelectedRecipe(
+                        self.slot_currently_in_edition.unwrap(),
+                        None
+                    )),
+                    self.list_all_recipes__as_clickable_buttons(),
+                ]
+                .spacing(10),
             ]
             .spacing(10),
-        ]
-        .spacing(10)
+        )
         .into()
     }
 

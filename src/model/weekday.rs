@@ -11,6 +11,7 @@ pub const SUNDAY: &str = "Dimanche";
 
 #[derive(Clone, Debug)]
 pub struct WeekDay {
+    pub day_position: i8,
     pub name: String,
     pub noon_recipe_slot: RecipeSlot,
     pub evening_recipe_slot: RecipeSlot,
@@ -21,11 +22,13 @@ pub struct WeekDay {
 impl WeekDay {
     pub fn new(
         name: String,
+        day_position: i8,
         noon_recipe_slot: RecipeSlot,
         evening_recipe_slot: RecipeSlot,
     ) -> WeekDay {
         WeekDay {
             name,
+            day_position,
             noon_recipe_slot,
             evening_recipe_slot,
             noon_recipe: None,

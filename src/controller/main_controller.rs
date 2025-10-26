@@ -25,36 +25,43 @@ impl Default for MainController {
         let week_days = Vec::from([
             WeekDay::new(
                 String::from(MONDAY),
+                0,
                 RecipeSlot::MondayNoon,
                 RecipeSlot::MondayEvening,
             ),
             WeekDay::new(
                 String::from(TUESDAY),
+                1,
                 RecipeSlot::TuesdayNoon,
                 RecipeSlot::TuesdayEvening,
             ),
             WeekDay::new(
                 String::from(WEDNESDAY),
+                2,
                 RecipeSlot::WednesdayNoon,
                 RecipeSlot::WednesdayEvening,
             ),
             WeekDay::new(
                 String::from(THURSDAY),
+                3,
                 RecipeSlot::ThursdayNoon,
                 RecipeSlot::ThursdayEvening,
             ),
             WeekDay::new(
                 String::from(FRIDAY),
+                4,
                 RecipeSlot::FridayNoon,
                 RecipeSlot::FridayEvening,
             ),
             WeekDay::new(
                 String::from(SATURDAY),
+                5,
                 RecipeSlot::SaturdayNoon,
                 RecipeSlot::SaturdayEvening,
             ),
             WeekDay::new(
                 String::from(SUNDAY),
+                6,
                 RecipeSlot::SaturdayNoon,
                 RecipeSlot::SundayEvening,
             ),
@@ -221,6 +228,8 @@ impl MainController {
                 let all_ingredients: Vec<Ingredient> = self
                     .recipe_service
                     .gather_all_ingredients_from_recipes_vector(&all_recipes);
+
+                week_days_to_print.sort_by(|day1, day2| day1.day_position.cmp(&day2.day_position));
 
                 let menu = Menu {
                     all_ingredients,

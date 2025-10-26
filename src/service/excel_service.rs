@@ -25,8 +25,9 @@ pub fn column_header_format() -> Format {
         .set_font_size(20)
 }
 
-fn write_shopping_list(workbook: &mut Workbook, all_ingredients: &Vec<Ingredient>) {
+fn write_shopping_list(workbook: &mut Workbook, menu: &Menu) {
     let mut worksheet = workbook.add_worksheet();
+    let all_ingredients = menu.all_ingredients.clone();
     worksheet.set_name("Liste de courses").unwrap();
 
     let starting_row = 1;
@@ -34,7 +35,8 @@ fn write_shopping_list(workbook: &mut Workbook, all_ingredients: &Vec<Ingredient
 
     let ingredient_name_column = starting_column + 0;
     let ingredient_quantity_column = starting_column + 1;
-    let ingredient_unit = starting_column + 2;
+    let ingredient_unit_column = starting_column + 2;
+    let week_resume_column = starting_column + 4;
 
     worksheet
         .write_with_format(
@@ -52,6 +54,14 @@ fn write_shopping_list(workbook: &mut Workbook, all_ingredients: &Vec<Ingredient
             &column_header_format(),
         )
         .unwrap();
+    worksheet
+        .write_with_format(
+            starting_row,
+            week_resume_column,
+            "Résumé de la semaine",
+            &column_header_format(),
+        )
+        .unwrap();
 
     for i in 0..all_ingredients.len() {
         let writing_row = starting_row + 1 + i as u32;
@@ -64,9 +74,39 @@ fn write_shopping_list(workbook: &mut Workbook, all_ingredients: &Vec<Ingredient
             .unwrap();
         if ingredient.unit != WHOLE_INGREDIENT {
             worksheet
-                .write(writing_row, ingredient_unit, ingredient.unit)
+                .write(writing_row, ingredient_unit_column, ingredient.unit)
                 .unwrap();
         }
+    }
+
+    let mut writing_row = starting_row + 1;
+    for i in 0..menu.week_days.len() {
+        let week_day = &menu.week_days[i];
+        worksheet
+            .write(writing_row, week_resume_column, week_day.name.clone())
+            .unwrap();
+
+        writing_row = writing_row + 1;
+        if let Some(recipe) = week_day.noon_recipe.clone() {
+            worksheet
+                .write(writing_row, week_resume_column, "Midi :")
+                .unwrap();
+            worksheet
+                .write(writing_row, week_resume_column + 1, format!("{} ({} personnes)", recipe.name, recipe.configured_nbr_persons))
+                .unwrap();
+            writing_row = writing_row + 1;
+        }
+
+        if let Some(recipe) = week_day.evening_recipe.clone() {
+            worksheet
+                .write(writing_row, week_resume_column, "Soir :")
+                .unwrap();
+            worksheet
+                .write(writing_row, week_resume_column + 1, format!("{} ({} personnes)", recipe.name, recipe.configured_nbr_persons))
+                .unwrap();
+            writing_row = writing_row + 1;
+        }
+        writing_row = writing_row + 1;
     }
 }
 
@@ -196,7 +236,7 @@ pub fn write_excel_menu(menu: &Menu) {
         (RecipeSlot::SundayEvening, SUNDAY),
     ]);
 
-    write_shopping_list(&mut workbook, &menu.all_ingredients);
+    write_shopping_list(&mut workbook, &menu);
 
     for day in menu.week_days.iter() {
         if day.clone().noon_recipe.is_some() || day.clone().evening_recipe.is_some() {

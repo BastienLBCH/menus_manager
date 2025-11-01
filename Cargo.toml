@@ -4,5 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+calamine = "0.31.0"
 iced = "0.13.1"
+native-dialog = "0.9.2"
 rust_xlsxwriter = "0.90.2"

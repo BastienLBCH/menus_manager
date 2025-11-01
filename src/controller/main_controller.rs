@@ -4,7 +4,7 @@ use crate::model::recipe::Recipe;
 use crate::model::weekday::{
     FRIDAY, MONDAY, SATURDAY, SUNDAY, THURSDAY, TUESDAY, WEDNESDAY, WeekDay,
 };
-use crate::service::excel_service::write_excel_menu;
+use crate::service::excel_service::{read_from_excel_menu, write_excel_menu};
 use crate::service::recipe_service::RecipeService;
 use std::collections::HashMap;
 
@@ -22,7 +22,7 @@ impl Default for MainController {
     fn default() -> Self {
         let mut recipe_service = RecipeService::new();
         recipe_service.load_all_recipes();
-        let week_days = Vec::from([
+        let week_days: Vec<WeekDay> = Vec::from([
             WeekDay::new(
                 String::from(MONDAY),
                 0,
@@ -107,6 +107,7 @@ pub enum Message {
     GenerateRecipeDocument,
     IncrementedNbrPersonsOfRecipe(RecipeSlot, u8),
     DecrementedNbrPersonsOfRecipe(RecipeSlot, u8),
+    ImportExcelFile,
 }
 
 pub enum View {
@@ -236,7 +237,10 @@ impl MainController {
                     week_days: week_days_to_print,
                 };
                 write_excel_menu(&menu);
-            }
+            },
+            Message::ImportExcelFile => {
+                read_from_excel_menu(self.week_days.clone());
+            },
         }
     }
 }

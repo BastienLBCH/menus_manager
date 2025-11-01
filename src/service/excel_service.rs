@@ -6,6 +6,8 @@ use crate::model::weekday::{
     FRIDAY, MONDAY, SATURDAY, SUNDAY, THURSDAY, TUESDAY, WEDNESDAY, WeekDay,
 };
 use rust_xlsxwriter::{Color, Format, Workbook, Worksheet};
+use native_dialog::DialogBuilder;
+use calamine::{open_workbook, Reader, Xlsx};
 use std::collections::HashMap;
 
 #[derive(Debug)]
@@ -245,4 +247,17 @@ pub fn write_excel_menu(menu: &Menu) {
     }
 
     workbook.save("menu.xlsx").expect("Write failed");
+}
+
+pub fn read_from_excel_menu(week_days: Vec<WeekDay>) {
+    let path = DialogBuilder::file()
+    .open_single_file()
+    .show()
+    .unwrap();
+    // if let Some(path) = path {
+    //     let path_as_str = path.to_str().unwrap();
+    //     let mut workbook: Xlsx<_> = open_workbook(path.clone()).expect(format!("Failed to open workbook '{}'", path_as_str).as_str());
+    //     let workbook_sheets = workbook.sheet_names().clone().iter().filter(|sheet_name| {});
+    // }
+    // return;
 }

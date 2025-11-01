@@ -222,9 +222,10 @@ impl MainController {
         main_view = main_view.push(Space::with_height(Length::Fixed(10.0)));
         main_view = main_view.push(row![
             Space::with_width(Length::FillPortion(1)),
-            button("Generate").on_press(Message::GenerateRecipeDocument),
+            button("Générer menu").on_press(Message::GenerateRecipeDocument),
+            button("Importer").on_press(Message::ImportExcelFile),
             Space::with_width(Length::FillPortion(1))
-        ]);
+        ].spacing(10));
         main_view = main_view.push(Space::with_height(Length::Fixed(10.0)));
         main_view.into()
     }

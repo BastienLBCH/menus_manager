@@ -15,7 +15,7 @@ Veggie: oui
 20 : tomates cerises 
 1 : cc : ail + piment d’espelette
 1 : cs : huile d’olive 
-Basilic
+1 : Basilic
 1 : avocat 
 1 : cs : mayonnaise 
 1 : filet : citron vert 

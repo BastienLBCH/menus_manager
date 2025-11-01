@@ -1,0 +1,23 @@
+Poulet sauce forestière
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+800 : g : pomme de terre
+2 : échalote
+2 : gousse d'ail
+500 : courgette
+2 : brin : romarin
+400 : g : Blanc de poulet
+250 : g : champignon
+200 : g : crème épaisse
+300 : ml : bouillon de légume
+4 : cs : Beurre 
+4 : cs : moutarde
+2 : cs : vinaigre balsamique
+
+A venir

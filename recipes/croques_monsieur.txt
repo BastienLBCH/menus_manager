@@ -1,0 +1,22 @@
+Croques Monsieur
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+8 : tranches : Pain de mie
+4 : échalottes
+8 : tranches : Jambon blanc
+50 : g : farine
+50 : g : beurre
+60 : cl : lait
+1 : sel
+1 : poivre
+1 : muscade râpée
+
+Avec la farine, le beurre, le lait et la muscade faire une béchamel
+Assembler les ingrédients pour faire des croques monsieur
+Mettre au four 180°C chaleur tournante

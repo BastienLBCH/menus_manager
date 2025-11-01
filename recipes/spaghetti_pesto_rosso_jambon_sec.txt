@@ -1,0 +1,19 @@
+Spaghetti, pesto rosso & jambon sec
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+250 : g : Tomates cerises rouges
+1 : sachet : Basilic
+360 : g : Spaghetti
+80 : g : fromage râpé Italienne
+120 : g : Pesto rosso
+12 : tranches : Jambon sec
+1 : sachet : noix concassées
+
+
+À VENIR

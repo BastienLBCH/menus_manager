@@ -1,4 +1,10 @@
 use crate::model::ingredient::Ingredient;
+
+
+pub const NOON: &str = "Midi";
+pub const EVENING: &str = "Soir";
+
+
 #[derive(Clone, Debug)]
 pub struct Recipe {
     pub name: String,

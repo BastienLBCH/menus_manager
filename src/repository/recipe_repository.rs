@@ -19,7 +19,7 @@ impl RecipeRepository {
         self.recipes.keys().cloned().collect()
     }
 
-    pub fn get_recipe(&self, name: &str) -> Recipe {
-        self.recipes.get(name).unwrap().clone()
+    pub fn get_recipe(&self, name: &str) -> Option<Recipe> {
+        self.recipes.get(name).cloned()
     }
 }

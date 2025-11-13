@@ -2,7 +2,7 @@ use crate::controller::main_controller::Message::{
     DecrementedNbrPersonsOfRecipe, IncrementedNbrPersonsOfRecipe, ReturnButtonPressed,
 };
 use crate::controller::main_controller::{MainController, Message, RecipeSlot, View};
-use crate::model::recipe::Recipe;
+use crate::model::recipe::{Recipe, EVENING, NOON};
 use crate::model::weekday::{FRIDAY, MONDAY, SATURDAY, SUNDAY, THURSDAY, TUESDAY, WEDNESDAY};
 use iced::widget::{
     Button, Column, Row, Space, TextInput, Toggler, button, column, container, horizontal_rule,
@@ -205,9 +205,9 @@ impl MainController {
         ];
 
         let mut main_view = Column::new();
-        let noon_row = self.generate_recipe_slots_row(String::from("Midi"), week_days, noon_slots);
+        let noon_row = self.generate_recipe_slots_row(String::from(NOON), week_days, noon_slots);
         let evening_row =
-            self.generate_recipe_slots_row(String::from("Soir"), week_days, evening_slots);
+            self.generate_recipe_slots_row(String::from(EVENING), week_days, evening_slots);
 
         main_view = main_view.push(noon_row);
         main_view = main_view.push(horizontal_rule(2));

@@ -145,7 +145,8 @@ impl MainController {
                 if let Some(selected_recipe_name) = recipe {
                     let selected_recipe = self
                         .recipe_service
-                        .find_recipe_by_name(&selected_recipe_name);
+                        .find_recipe_by_name(&selected_recipe_name).unwrap();
+
                     self.selected_recipes.insert(recipe_slot, selected_recipe);
                 } else {
                     if self.selected_recipes.contains_key(&recipe_slot) {
@@ -239,7 +240,17 @@ impl MainController {
                 write_excel_menu(&menu);
             },
             Message::ImportExcelFile => {
-                read_from_excel_menu(self.week_days.clone());
+                let loaded_week_days = read_from_excel_menu(&self.recipe_service, self.week_days.clone());
+                if let Some(loaded_week_days) = loaded_week_days {
+                    for week_day in loaded_week_days {
+                        if let Some(noon_recipe) = week_day.noon_recipe {
+                            self.selected_recipes.insert(week_day.noon_recipe_slot, noon_recipe.clone());
+                        }
+                        if let Some(evening_recipe) = week_day.evening_recipe {
+                            self.selected_recipes.insert(week_day.evening_recipe_slot, evening_recipe.clone());
+                        }
+                    }
+                }
             },
         }
     }

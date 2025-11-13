@@ -158,7 +158,7 @@ impl RecipeService {
         }
     }
 
-    pub fn find_recipe_by_name(&self, recipe_name: &String) -> Recipe {
+    pub fn find_recipe_by_name(&self, recipe_name: &String) -> Option<Recipe> {
         self.recipe_repository.get_recipe(recipe_name)
     }
 
@@ -168,7 +168,7 @@ impl RecipeService {
             true => {
                 let all_recipes_names = self.recipe_repository.list_all_recipes_names();
                 for recipe_name in all_recipes_names {
-                    if self.recipe_repository.get_recipe(&recipe_name).is_veggie {
+                    if self.recipe_repository.get_recipe(&recipe_name).unwrap().is_veggie {
                         recipe_list.push(recipe_name.to_string());
                     }
                 }

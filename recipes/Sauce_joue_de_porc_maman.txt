@@ -1,0 +1,14 @@
+Poulet sauce joue de porc maman
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+170 : g : couscous
+800 : g : poulet
+1 : pot : sauce joue de poc maman
+
+À VENIR

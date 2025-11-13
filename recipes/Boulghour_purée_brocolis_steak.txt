@@ -1,0 +1,14 @@
+Boulghour purée de brocolis et steak
+
+Nombre de personnes : 2
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+1 : sachet : mélange boulghour graine de sésame
+2 : steak : hachés
+300 : g : purée de brocolis
+
+À VENIR

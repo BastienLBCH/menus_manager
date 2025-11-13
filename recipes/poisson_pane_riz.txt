@@ -1,0 +1,14 @@
+Poisson pané et riz
+
+Nombre de personnes : 2
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+160 : g : riz
+10 : batonnets : poisson pané
+300 : g : brocolis optionnel
+
+À VENIR

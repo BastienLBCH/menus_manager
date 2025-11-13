@@ -5,8 +5,8 @@ use crate::controller::main_controller::{MainController, Message, RecipeSlot, Vi
 use crate::model::recipe::Recipe;
 use crate::model::weekday::{FRIDAY, MONDAY, SATURDAY, SUNDAY, THURSDAY, TUESDAY, WEDNESDAY};
 use iced::widget::{
-    Button, Column, Row, Space, TextInput, Toggler, button, column, horizontal_rule, row,
-    scrollable, text, text_input, toggler, vertical_rule,
+    Button, Column, Row, Space, TextInput, Toggler, button, column, container, horizontal_rule,
+    row, scrollable, text, text_input, toggler, vertical_rule,
 };
 use iced::{Alignment, Element, Length};
 
@@ -102,34 +102,33 @@ impl MainController {
 
         if let Some(selected_recipe) = selected_recipe {
             column![
-                select_recipe_button,
+                select_recipe_button.height(Length::Fixed(75.)),
                 row![
-                    column![
-                        Space::with_height(Length::Fill),
-                        text(format!(
-                            "Pour: {}",
-                            selected_recipe.configured_nbr_persons.to_string()
-                        )),
-                        Space::with_height(Length::Fill),
-                    ],
-                    column![
-                        button("+")
-                            .on_press(IncrementedNbrPersonsOfRecipe(recipe_slot, 1))
-                            .height(Length::Fill)
-                            .width(Length::Fill)
-                            .clip(false),
-                        button("-")
-                            .on_press(DecrementedNbrPersonsOfRecipe(recipe_slot, 1))
-                            .height(Length::Fill)
-                            .width(Length::Fill)
-                            .clip(false),
-                    ]
-                    .spacing(2)
+                    container(column![text(format!(
+                        "Pour: {}",
+                        selected_recipe.configured_nbr_persons.to_string()
+                    )),])
+                    .height(Length::Fill)
+                    .align_y(Alignment::Center),
+                    container(
+                        column![
+                            button("+")
+                                .on_press(IncrementedNbrPersonsOfRecipe(recipe_slot, 1))
+                                .width(Length::Fill)
+                                .clip(false),
+                            button("-")
+                                .on_press(DecrementedNbrPersonsOfRecipe(recipe_slot, 1))
+                                .width(Length::Fill)
+                                .clip(false),
+                        ]
+                        .spacing(2)
+                    )
+                    .height(Length::Fill)
+                    .align_y(Alignment::Center),
                 ]
                 .spacing(10)
             ]
             .spacing(20)
-            .height(Length::Fill)
             .into()
         } else {
             select_recipe_button.into()
@@ -147,9 +146,8 @@ impl MainController {
         }
         column![
             text(week_day),
-            Space::with_height(Length::FillPortion(spacing_height)),
+            Space::with_height(Length::Fixed(5.)),
             self.generate_recipe_selector(recipe_slot),
-            Space::with_height(Length::FillPortion(spacing_height)),
         ]
         .align_x(Alignment::Center)
     }
@@ -162,13 +160,9 @@ impl MainController {
     ) -> Row<Message> {
         let mut recipe_slots_row = Row::new().spacing(12);
         recipe_slots_row = recipe_slots_row.push(
-            column![
-                Space::with_height(Length::FillPortion(2)),
-                text(row_name),
-                Space::with_height(Length::FillPortion(2)),
-            ]
-            .width(Length::Fixed(50.))
-            .align_x(Alignment::Center),
+            column![text(row_name),]
+                .width(Length::Fixed(50.))
+                .align_x(Alignment::Center),
         );
 
         recipe_slots_row = recipe_slots_row.push(vertical_rule(2));
@@ -220,12 +214,15 @@ impl MainController {
         main_view = main_view.push(evening_row);
         main_view = main_view.push(horizontal_rule(2));
         main_view = main_view.push(Space::with_height(Length::Fixed(10.0)));
-        main_view = main_view.push(row![
-            Space::with_width(Length::FillPortion(1)),
-            button("Générer menu").on_press(Message::GenerateRecipeDocument),
-            button("Importer").on_press(Message::ImportExcelFile),
-            Space::with_width(Length::FillPortion(1))
-        ].spacing(10));
+        main_view = main_view.push(
+            row![
+                Space::with_width(Length::FillPortion(1)),
+                button("Générer menu").on_press(Message::GenerateRecipeDocument),
+                button("Importer").on_press(Message::ImportExcelFile),
+                Space::with_width(Length::FillPortion(1))
+            ]
+            .spacing(10),
+        );
         main_view = main_view.push(Space::with_height(Length::Fixed(10.0)));
         main_view.into()
     }

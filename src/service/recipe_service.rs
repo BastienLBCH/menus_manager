@@ -181,7 +181,7 @@ impl RecipeService {
                 .filter(|recipe_name| {
                     recipe_name
                         .to_lowercase()
-                        .starts_with(filter.to_lowercase().as_str())
+                        .contains(filter.to_lowercase().as_str())
                 })
                 .collect();
         }

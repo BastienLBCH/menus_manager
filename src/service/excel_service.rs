@@ -417,6 +417,7 @@ pub fn extract_recipe(
     {
         let mut recipe_to_return = recipe.clone();
         recipe_to_return.configured_nbr_persons = recipe_configured_persons.clone();
+        recipe_to_return.nbr_persons = recipe_configured_persons;
         return Some(recipe_to_return);
     }
 
@@ -429,6 +430,7 @@ pub fn extract_recipe(
         if let Some(mut recipe) = recipe {
             if let Some(recipe_configured_persons) = recipe_configured_persons {
                 recipe.configured_nbr_persons = recipe_configured_persons;
+                recipe.nbr_persons = recipe_configured_persons;
             }
             recipe_service.add_recipe(recipe.clone(), true);
             return Some(recipe);

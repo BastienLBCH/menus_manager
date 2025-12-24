@@ -468,10 +468,7 @@ pub fn read_from_excel_menu(
     recipe_service: &mut RecipeService,
     week_days: Vec<WeekDay>,
 ) -> Option<Vec<WeekDay>> {
-    // let path = DialogBuilder::file().open_single_file().show().unwrap();
-    let path = Some(Path::new(
-        "/Users/bastien/workspace/Projects/Rust/menus_manager/menu.xlsx",
-    ));
+    let path = DialogBuilder::file().open_single_file().show().unwrap();
 
     let mut path_as_str = "";
 

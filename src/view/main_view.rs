@@ -11,7 +11,7 @@ use iced::widget::{
 use iced::{Alignment, Element, Length};
 
 impl MainController {
-    pub fn list_all_recipes__as_clickable_buttons(&self) -> Element<Message> {
+    pub fn list_all_recipes_as_clickable_buttons(&self) -> Element<'_,Message> {
         let only_veggie_recipes = self
             .slots_filtering_veggie_recipes
             .contains(&self.slot_currently_in_edition.unwrap());
@@ -42,8 +42,8 @@ impl MainController {
         all_recipes_buttons.into()
     }
 
-    pub fn view__recipe_selection(&self) -> Element<Message> {
-        let search_bar__content = {
+    pub fn view_recipe_selection(&self) -> Element<'_, Message> {
+        let search_bar_content = {
             if self
                 .filters_on_recipes_slots
                 .contains_key(&self.slot_currently_in_edition.unwrap())
@@ -54,7 +54,7 @@ impl MainController {
             }
         };
         let search_bar: TextInput<Message> =
-            text_input("Filtrer par nom...", search_bar__content.as_str())
+            text_input("Filtrer par nom...", search_bar_content.as_str())
                 .on_input(Message::FilteredSlotRecipe);
 
         let toggler_is_checked = self
@@ -78,7 +78,7 @@ impl MainController {
                         self.slot_currently_in_edition.unwrap(),
                         None
                     )),
-                    self.list_all_recipes__as_clickable_buttons(),
+                    self.list_all_recipes_as_clickable_buttons(),
                 ]
                 .spacing(10),
             ]
@@ -87,8 +87,8 @@ impl MainController {
         .into()
     }
 
-    pub fn generate_recipe_selector(&self, recipe_slot: RecipeSlot) -> Element<Message> {
-        let mut button_name = String::new();
+    pub fn generate_recipe_selector(&self, recipe_slot: RecipeSlot) -> Element<'_, Message> {
+        let button_name: String;
         let mut selected_recipe: Option<Recipe> = None;
         if self.selected_recipes.contains_key(&recipe_slot) {
             selected_recipe = Some(self.selected_recipes[&recipe_slot].clone());
@@ -140,11 +140,7 @@ impl MainController {
         &self,
         week_day: String,
         recipe_slot: RecipeSlot,
-    ) -> Column<Message> {
-        let mut spacing_height = 2;
-        if self.selected_recipes.contains_key(&recipe_slot) {
-            spacing_height = 1;
-        }
+    ) -> Column<'_, Message> {
         column![
             text(week_day),
             Space::with_height(Length::Fixed(5.)),
@@ -158,7 +154,7 @@ impl MainController {
         row_name: String,
         week_days: [&str; 7],
         recipe_slots: [RecipeSlot; 7],
-    ) -> Row<Message> {
+    ) -> Row<'_, Message> {
         let mut recipe_slots_row = Row::new().spacing(12);
         recipe_slots_row = recipe_slots_row.push(
             column![text(row_name),]
@@ -181,7 +177,7 @@ impl MainController {
         recipe_slots_row
     }
 
-    pub fn view__main(&self) -> Element<Message> {
+    pub fn view_main(&self) -> Element<'_, Message> {
         let week_days: [&str; 7] = [
             MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY,
         ];
@@ -228,10 +224,10 @@ impl MainController {
         main_view.into()
     }
 
-    pub fn view(&self) -> Element<Message> {
+    pub fn view(&self) -> Element<'_, Message> {
         match self.current_view {
-            View::Main => self.view__main(),
-            View::RecipeSelection => self.view__recipe_selection(),
+            View::Main => self.view_main(),
+            View::RecipeSelection => self.view_recipe_selection(),
         }
     }
 }

@@ -57,15 +57,26 @@ impl Recipe {
         recipe_as_string.push_str(format!("Nombre de personnes : {} ", self.nbr_persons).as_str());
         recipe_as_string.push_str(&separation);
         recipe_as_string.push_str(format!("Veggie {} ", if self.is_veggie {"Oui"} else {"Non"}).as_str());
+        recipe_as_string.push_str(&separation);
 
+        let mut i = 0;
         for ingredient in self.ingredients.iter() {
             recipe_as_string.push_str(&ingredient.to_string());
+            i += 1;
+            if i < (self.ingredients.len()) {
+                recipe_as_string.push_str("\n");
+            }
         }
 
         recipe_as_string.push_str(&separation);
 
+        let mut i = 0;
         for step in self.steps.iter() {
             recipe_as_string.push_str(step);
+            i += 1;
+            if i < (self.steps.len()) {
+                recipe_as_string.push_str("\n");
+            }
         }
 
         recipe_as_string

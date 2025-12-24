@@ -167,10 +167,9 @@ impl RecipeService {
         self.recipe_repository.add_recipe(recipe.clone());
         if create_recipe_file {
             let filename: String = {
-                let mut filename_has_been_chosen = false;
                 let mut filename = String::new();
                 let mut attempts_number = 0;
-                while !filename_has_been_chosen {
+                loop {
                     if attempts_number > 0 {
                         filename = recipe
                             .name
@@ -183,7 +182,6 @@ impl RecipeService {
                     }
                     let path = Path::new(RECIPE_DIRECTORY).join(filename.clone());
                     if !path.exists() {
-                        filename_has_been_chosen = true;
                         break
                     } else {
                         attempts_number += 1;

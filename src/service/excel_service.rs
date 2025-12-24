@@ -31,7 +31,7 @@ pub fn column_header_format() -> Format {
 }
 
 fn write_shopping_list(workbook: &mut Workbook, menu: &Menu) {
-    let mut worksheet = workbook.add_worksheet();
+    let worksheet = workbook.add_worksheet();
     let all_ingredients = menu.all_ingredients.clone();
     worksheet.set_name("Liste de courses").unwrap();
 
@@ -136,8 +136,8 @@ fn write_recipe(
     starting_row: u32,
     starting_column: u16,
 ) -> u32 {
-    let mut daily_recipe_slot_name = "";
-    let mut recipe_to_write: Option<Recipe>;
+    let daily_recipe_slot_name: &str;
+    let recipe_to_write: Option<Recipe>;
 
     match daily_recipe_slot {
         DailyRecipeSlot::NOON => {
@@ -247,23 +247,6 @@ fn write_day(workbook: &mut Workbook, week_day: WeekDay) {
 
 pub fn write_excel_menu(menu: &Menu) {
     let mut workbook = Workbook::new();
-
-    let recipes_slots_associated_to_week_days = HashMap::from([
-        (RecipeSlot::MondayNoon, MONDAY),
-        (RecipeSlot::MondayEvening, MONDAY),
-        (RecipeSlot::TuesdayNoon, TUESDAY),
-        (RecipeSlot::TuesdayEvening, TUESDAY),
-        (RecipeSlot::WednesdayNoon, WEDNESDAY),
-        (RecipeSlot::WednesdayEvening, WEDNESDAY),
-        (RecipeSlot::ThursdayNoon, THURSDAY),
-        (RecipeSlot::ThursdayEvening, THURSDAY),
-        (RecipeSlot::FridayNoon, FRIDAY),
-        (RecipeSlot::FridayEvening, FRIDAY),
-        (RecipeSlot::SaturdayNoon, SATURDAY),
-        (RecipeSlot::SaturdayEvening, SATURDAY),
-        (RecipeSlot::SundayNoon, SUNDAY),
-        (RecipeSlot::SundayEvening, SUNDAY),
-    ]);
 
     write_shopping_list(&mut workbook, &menu);
 
@@ -443,7 +426,10 @@ pub fn extract_recipe(
             [recipe_name_row, recipe_name_col],
             recipe_configured_persons,
         );
-        if let Some(recipe) = recipe {
+        if let Some(mut recipe) = recipe {
+            if let Some(recipe_configured_persons) = recipe_configured_persons {
+                recipe.configured_nbr_persons = recipe_configured_persons;
+            }
             recipe_service.add_recipe(recipe.clone(), true);
             return Some(recipe);
         }
@@ -470,8 +456,6 @@ pub fn read_from_excel_menu(
 ) -> Option<Vec<WeekDay>> {
     let path = DialogBuilder::file().open_single_file().show().unwrap();
 
-    let mut path_as_str = "";
-
     let arranged_week_days: HashMap<String, WeekDay> = {
         let mut hashmap: HashMap<String, WeekDay> = HashMap::new();
         for week_day in week_days.clone() {
@@ -486,7 +470,7 @@ pub fn read_from_excel_menu(
         return None
     };
 
-    path_as_str = path.to_str().unwrap();
+    let path_as_str = path.to_str().unwrap();
 
     let mut workbook: Xlsx<_> = open_workbook(path.clone())
         .expect(format!("Failed to open workbook '{}'", path_as_str).as_str());

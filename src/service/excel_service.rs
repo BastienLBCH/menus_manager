@@ -1,20 +1,13 @@
-use crate::controller::main_controller::RecipeSlot;
 use crate::model::ingredient::{Ingredient, WHOLE_INGREDIENT};
 use crate::model::menu::Menu;
 use crate::model::recipe::Recipe;
 use crate::model::recipe::{EVENING, NOON};
-use crate::model::weekday::{
-    FRIDAY, MONDAY, SATURDAY, SUNDAY, THURSDAY, TUESDAY, WEDNESDAY, WeekDay,
-};
+use crate::model::weekday::WeekDay;
 use crate::service::recipe_service::{RecipeParts, RecipeService};
-use calamine::{Data, DataType, Reader, ToCellDeserializer, Xlsx, open_workbook};
+use calamine::{open_workbook, Data, DataType, Reader, Xlsx};
 use native_dialog::DialogBuilder;
 use rust_xlsxwriter::{Color, Format, Workbook, Worksheet};
 use std::collections::HashMap;
-use std::fs::File;
-use std::hash::Hash;
-use std::io::BufReader;
-use std::path::Path;
 
 #[derive(Debug)]
 enum DailyRecipeSlot {
@@ -468,9 +461,7 @@ pub fn read_from_excel_menu(
 
     let mut loaded_week_days: Vec<WeekDay> = Vec::new();
 
-    let Some(path) = path else {
-        return None
-    };
+    let Some(path) = path else { return None };
 
     let path_as_str = path.to_str().unwrap();
 

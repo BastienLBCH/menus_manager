@@ -115,9 +115,9 @@ impl RecipeService {
                 RecipeParts::Ingredients => {
                     let ingredient_line_parts: Vec<&str> = current_line.split(":").collect();
 
-                    let mut ingredient_quantity: f32 = 0.0;
-                    let mut ingredient_unit: String = "".to_string();
-                    let mut ingredient_name: String = "".to_string();
+                    let ingredient_quantity: f32;
+                    let ingredient_unit: String;
+                    let ingredient_name: String;
 
                     match ingredient_line_parts.len() {
                         3 => {
@@ -167,7 +167,7 @@ impl RecipeService {
         self.recipe_repository.add_recipe(recipe.clone());
         if create_recipe_file {
             let filename: String = {
-                let mut filename = String::new();
+                let mut filename: String;
                 let mut attempts_number = 0;
                 loop {
                     if attempts_number > 0 {

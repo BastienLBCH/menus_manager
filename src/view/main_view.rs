@@ -2,7 +2,7 @@ use crate::controller::main_controller::Message::{
     DecrementedNbrPersonsOfRecipe, IncrementedNbrPersonsOfRecipe, ReturnButtonPressed,
 };
 use crate::controller::main_controller::{MainController, Message, RecipeSlot, View};
-use crate::model::recipe::{Recipe, EVENING, NOON};
+use crate::model::recipe::{EVENING, NOON, Recipe};
 use crate::model::weekday::{FRIDAY, MONDAY, SATURDAY, SUNDAY, THURSDAY, TUESDAY, WEDNESDAY};
 use iced::widget::{
     Button, Column, Row, Space, TextInput, Toggler, button, column, container, horizontal_rule,
@@ -30,15 +30,16 @@ impl MainController {
         let all_recipes = self
             .recipe_service
             .list_recipes(filter, only_veggie_recipes);
-        let mut all_buttons: Column<Message> = Column::new();
+        let mut all_recipes_buttons: Column<Message> = Column::new();
 
         for recipe in all_recipes {
-            all_buttons = all_buttons.push(button(text(recipe.clone())).on_press(
+            all_recipes_buttons = all_recipes_buttons.push(button(text(recipe.clone())).on_press(
                 Message::SelectedRecipe(self.slot_currently_in_edition.unwrap(), Some(recipe)),
             ));
         }
-        all_buttons = all_buttons.spacing(5);
-        all_buttons.into()
+        all_recipes_buttons = all_recipes_buttons.push(Space::with_height(Length::Fixed(5.)));
+        all_recipes_buttons = all_recipes_buttons.spacing(5);
+        all_recipes_buttons.into()
     }
 
     pub fn view__recipe_selection(&self) -> Element<Message> {

@@ -1906,6 +1906,7 @@ version = "0.1.0"
 dependencies = [
  "calamine",
  "iced",
+ "log",
  "native-dialog",
  "rust_xlsxwriter",
 ]

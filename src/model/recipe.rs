@@ -48,4 +48,26 @@ impl Recipe {
             ingredient.quantity = round_to_2_digits(new_quantity);
         }
     }
+
+    pub fn to_string(&self) -> String {
+        let mut recipe_as_string = "".to_string();
+        let separation = "\n\n".to_string();
+        recipe_as_string.push_str(self.name.as_str());
+        recipe_as_string.push_str(&separation);
+        recipe_as_string.push_str(format!("Nombre de personnes : {} ", self.nbr_persons).as_str());
+        recipe_as_string.push_str(&separation);
+        recipe_as_string.push_str(format!("Veggie {} ", if self.is_veggie {"Oui"} else {"Non"}).as_str());
+
+        for ingredient in self.ingredients.iter() {
+            recipe_as_string.push_str(&ingredient.to_string());
+        }
+
+        recipe_as_string.push_str(&separation);
+
+        for step in self.steps.iter() {
+            recipe_as_string.push_str(step);
+        }
+
+        recipe_as_string
+    }
 }

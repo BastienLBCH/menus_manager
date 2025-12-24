@@ -1,17 +1,21 @@
+use std::fs;
 use crate::model::ingredient::{Ingredient, WHOLE_INGREDIENT};
 use crate::model::recipe::Recipe;
 use crate::repository::recipe_repository::RecipeRepository;
 use std::fs::File;
-use std::io;
 use std::io::Read;
+use std::ops::Add;
 use std::path::Path;
 
+pub enum RecipeParts {
+    Name,
+    NbrPersons,
+    Veggie,
+    Ingredients,
+    Steps,
+}
+
 const RECIPE_DIRECTORY: &str = "recipes/";
-const RECIPE_PART__NAME: &str = "name";
-const RECIPE_PART__NBR_PERSONS: &str = "nbr_persons";
-const RECIPE_PART__VEGGIE: &str = "veggie";
-const RECIPE_PART__INGREDIENTS: &str = "ingredients";
-const RECIPE_PART__STEPS: &str = "steps";
 
 const ACCEPTED_BOOLEAN__TRUE: [&str; 6] = ["true", "yes", "oui", "y", "o", "t"];
 const ACCEPTED_BOOLEAN__FALSE: [&str; 5] = ["false", "no", "non", "n", "f"];
@@ -57,26 +61,28 @@ impl RecipeService {
     }
 
     pub fn load_recipe(&mut self, recipe_file: &Path) -> Recipe {
-        let mut file = File::open(recipe_file).expect(format!("Failed to open recipe file : {}", recipe_file.display()).as_str());
+        let mut file = File::open(recipe_file)
+            .expect(format!("Failed to open recipe file : {}", recipe_file.display()).as_str());
         let mut content = String::new();
-        file.read_to_string(&mut content).expect(format!("Failed to read recipe file : {}", recipe_file.display()).as_str());
+        file.read_to_string(&mut content)
+            .expect(format!("Failed to read recipe file : {}", recipe_file.display()).as_str());
         let recipe_lines: Vec<&str> = content.split("\n").collect();
 
         let recipe_pattern = [
-            RECIPE_PART__NAME,
-            RECIPE_PART__NBR_PERSONS,
-            RECIPE_PART__VEGGIE,
-            RECIPE_PART__INGREDIENTS,
-            RECIPE_PART__STEPS,
+            RecipeParts::Name,
+            RecipeParts::NbrPersons,
+            RecipeParts::Veggie,
+            RecipeParts::Ingredients,
+            RecipeParts::Steps,
         ];
         let mut pattern_index = 0;
         let mut recipe = Recipe::new();
         let mut previous_turn_was_blank = false;
         for line_number in 0..recipe_lines.len() {
-            let position_in_pattern = recipe_pattern[pattern_index];
+            let position_in_pattern = &recipe_pattern[pattern_index];
             let current_line = recipe_lines[line_number].trim();
             if current_line == "" {
-                if !previous_turn_was_blank && pattern_index < (recipe_pattern.len()-1) {
+                if !previous_turn_was_blank && pattern_index < (recipe_pattern.len() - 1) {
                     pattern_index = pattern_index + 1;
                 }
                 previous_turn_was_blank = true;
@@ -88,16 +94,16 @@ impl RecipeService {
             previous_turn_was_blank = false;
 
             match position_in_pattern {
-                RECIPE_PART__NAME => {
+                RecipeParts::Name => {
                     recipe.set_name(recipe_lines[line_number].to_string());
                 }
-                RECIPE_PART__NBR_PERSONS => {
+                RecipeParts::NbrPersons => {
                     let line_parts: Vec<&str> = current_line.split_whitespace().collect();
                     let nbr_persons_as_str = line_parts[line_parts.len() - 1].trim();
                     recipe.nbr_persons = nbr_persons_as_str.parse::<u8>().expect(format!("Failed to load the number of person this recipe is for from line \"{}\" in file {}", current_line, recipe_file.display()).as_str());
                     recipe.configured_nbr_persons = recipe.nbr_persons.clone();
                 }
-                RECIPE_PART__VEGGIE => {
+                RecipeParts::Veggie => {
                     let veggie_parts: Vec<&str> = current_line.split_whitespace().collect();
                     let str_boolean = veggie_parts[1].trim();
                     if ACCEPTED_BOOLEAN__TRUE.contains(&str_boolean) {
@@ -106,22 +112,37 @@ impl RecipeService {
                         recipe.is_veggie = false;
                     }
                 }
-                RECIPE_PART__INGREDIENTS => {
-                    let ingredient_line_parts: Vec<&str> =
-                        current_line.split(":").collect();
+                RecipeParts::Ingredients => {
+                    let ingredient_line_parts: Vec<&str> = current_line.split(":").collect();
 
                     let mut ingredient_quantity: f32 = 0.0;
-                    let mut ingredient_unit: String = String::from("");
-                    let mut ingredient_name: String = String::from("");
+                    let mut ingredient_unit: String = "".to_string();
+                    let mut ingredient_name: String = "".to_string();
 
                     match ingredient_line_parts.len() {
                         3 => {
-                            ingredient_quantity = ingredient_line_parts[0].trim().parse::<f32>().expect(format!("Failed to load the ingredient from line \"{}\" in file {}", current_line, recipe_file.display()).as_str());
+                            ingredient_quantity =
+                                ingredient_line_parts[0].trim().parse::<f32>().expect(
+                                    format!(
+                                        "Failed to load the ingredient from line \"{}\" in file {}",
+                                        current_line,
+                                        recipe_file.display()
+                                    )
+                                    .as_str(),
+                                );
                             ingredient_unit = ingredient_line_parts[1].trim().to_string();
                             ingredient_name = ingredient_line_parts[2].trim().to_string();
                         }
                         2 => {
-                            ingredient_quantity = ingredient_line_parts[0].trim().parse::<f32>().expect(format!("Failed to load the ingredient from line \"{}\" in file {}", current_line, recipe_file.display()).as_str());
+                            ingredient_quantity =
+                                ingredient_line_parts[0].trim().parse::<f32>().expect(
+                                    format!(
+                                        "Failed to load the ingredient from line \"{}\" in file {}",
+                                        current_line,
+                                        recipe_file.display()
+                                    )
+                                    .as_str(),
+                                );
                             ingredient_unit = WHOLE_INGREDIENT.to_string();
                             ingredient_name = ingredient_line_parts[1].trim().to_string();
                         }
@@ -134,15 +155,46 @@ impl RecipeService {
                         quantity: ingredient_quantity,
                     });
                 }
-                RECIPE_PART__STEPS => {
+                RecipeParts::Steps => {
                     recipe.add_step(current_line.to_string());
-                }
-                _ => {
-                    continue;
                 }
             }
         }
         recipe
+    }
+
+    pub fn add_recipe(&mut self, recipe: Recipe, create_recipe_file: bool) {
+        self.recipe_repository.add_recipe(recipe.clone());
+        if create_recipe_file {
+            let filename: String = {
+                let mut filename_has_been_chosen = false;
+                let mut filename = String::new();
+                let mut attempts_number = 0;
+                while !filename_has_been_chosen {
+                    if attempts_number > 0 {
+                        filename = recipe
+                            .name
+                            .to_lowercase()
+                            .replace(" ", "_")
+                            .add(format!("_{attempts_number}").as_str())
+                            .add(".txt");
+                    } else {
+                        filename = recipe.name.to_lowercase().replace(" ", "_").add(".txt");
+                    }
+                    let path = Path::new(RECIPE_DIRECTORY).join(filename.clone());
+                    if !path.exists() {
+                        filename_has_been_chosen = true;
+                        break
+                    } else {
+                        attempts_number += 1;
+                    }
+                }
+                filename
+            };
+            let filepath = Path::new(RECIPE_DIRECTORY).join(filename.clone());
+            let recipe_as_string = recipe.to_string();
+            fs::write(&filepath, recipe_as_string).expect(format!("Failed to write recipe {} to file {}", recipe.name, filepath.to_str().unwrap()).as_str());
+        }
     }
 
     pub fn load_all_recipes(&mut self) {
@@ -168,7 +220,12 @@ impl RecipeService {
             true => {
                 let all_recipes_names = self.recipe_repository.list_all_recipes_names();
                 for recipe_name in all_recipes_names {
-                    if self.recipe_repository.get_recipe(&recipe_name).unwrap().is_veggie {
+                    if self
+                        .recipe_repository
+                        .get_recipe(&recipe_name)
+                        .unwrap()
+                        .is_veggie
+                    {
                         recipe_list.push(recipe_name.to_string());
                     }
                 }

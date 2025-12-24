@@ -240,7 +240,7 @@ impl MainController {
                 write_excel_menu(&menu);
             },
             Message::ImportExcelFile => {
-                let loaded_week_days = read_from_excel_menu(&self.recipe_service, self.week_days.clone());
+                let loaded_week_days = read_from_excel_menu(&mut self.recipe_service, self.week_days.clone());
                 if let Some(loaded_week_days) = loaded_week_days {
                     for week_day in loaded_week_days {
                         if let Some(noon_recipe) = week_day.noon_recipe {

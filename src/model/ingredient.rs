@@ -6,3 +6,13 @@ pub struct Ingredient {
     pub unit: String,
     pub quantity: f32,
 }
+
+impl Ingredient {
+    pub fn to_string(&self) -> String {
+        if self.unit == WHOLE_INGREDIENT {
+            format!("{} : {}", self.quantity, self.quantity)
+        } else {
+            format!("{} : {} : {}", self.quantity, self.unit, self.quantity)
+        }
+    }
+}

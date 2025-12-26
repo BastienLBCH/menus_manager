@@ -2,16 +2,16 @@ use crate::controller::main_controller::Message::{
     DecrementedNbrPersonsOfRecipe, IncrementedNbrPersonsOfRecipe, ReturnButtonPressed,
 };
 use crate::controller::main_controller::{MainController, Message, RecipeSlot, View};
-use crate::model::recipe::{EVENING, NOON, Recipe};
+use crate::model::recipe::{Recipe, EVENING, NOON};
 use crate::model::weekday::{FRIDAY, MONDAY, SATURDAY, SUNDAY, THURSDAY, TUESDAY, WEDNESDAY};
 use iced::widget::{
-    Button, Column, Row, Space, TextInput, Toggler, button, column, container, horizontal_rule,
-    row, scrollable, text, text_input, toggler, vertical_rule,
+    button, column, container, horizontal_rule, row, scrollable, text, text_input, toggler, vertical_rule,
+    Button, Column, Row, Space, TextInput, Toggler,
 };
-use iced::{Alignment, Element, Length};
+use iced::{Alignment, Background, Color, Element, Length};
 
 impl MainController {
-    pub fn list_all_recipes_as_clickable_buttons(&self) -> Element<'_,Message> {
+    pub fn list_all_recipes_as_clickable_buttons(&self) -> Element<'_, Message> {
         let only_veggie_recipes = self
             .slots_filtering_veggie_recipes
             .contains(&self.slot_currently_in_edition.unwrap());
@@ -104,6 +104,20 @@ impl MainController {
         if let Some(selected_recipe) = selected_recipe {
             column![
                 select_recipe_button.height(Length::Fixed(75.)),
+                container(
+                    button("X")
+                        .on_press(Message::SelectedRecipe(recipe_slot, None))
+                        .style(|theme, status| button::Style {
+                            background: Some(Background::Color(Color::from_rgb(
+                                236. / 255.0,
+                                8. / 255.0,
+                                8. / 255.0
+                            ))),
+                            ..button::primary(theme, status)
+                        })
+                )
+                .width(Length::Fill)
+                .align_x(Alignment::End),
                 row![
                     container(column![text(format!(
                         "Pour: {}",

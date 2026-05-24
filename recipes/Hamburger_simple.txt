@@ -5,7 +5,7 @@ Nombre de personnes : 2
 # Accepted values :
 # Yes: "true", "yes", "oui", "y", "o", "t"
 # No: "false", "no", "non", "n", "f"
-Veggie: y
+Veggie: non
 
 1 : salade
 1 : tomate

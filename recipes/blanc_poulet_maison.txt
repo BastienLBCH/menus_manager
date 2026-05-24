@@ -5,7 +5,7 @@ Nombre de personnes : 8
 # Accepted values :
 # Yes: "true", "yes", "oui", "y", "o", "t"
 # No: "false", "no", "non", "n", "f"
-Veggie: oui
+Veggie: non
 
 500 : g : filet de poulet
 135 : ml : eau

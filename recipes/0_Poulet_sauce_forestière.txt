@@ -5,7 +5,7 @@ Nombre de personnes : 4
 # Accepted values :
 # Yes: "true", "yes", "oui", "y", "o", "t"
 # No: "false", "no", "non", "n", "f"
-Veggie: oui
+Veggie: non
 
 800 : g : pomme de terre
 2 : échalote

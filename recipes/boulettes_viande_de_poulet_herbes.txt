@@ -1,0 +1,43 @@
+Boulettes de viande de poulet aux herbes et frites patates douce
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+400 : g : blanc de poulet
+1 : échalotte finement ciselée
+1 : gousse d'ail
+1 : herbes fraîches (ciboulette, persil plat, aneth, menthe)
+1 : càs : farine
+2 : càs : parmesan
+1 : jus de citron
+1 : œuf
+4 : càs : farine
+4 : càs : chapelure
+800: g : patate douce
+3 : càs : paprika en poudre
+1 : càs : piment doux
+1 : càs : ail en poudre
+3 : càs : huile d'olive
+1 : càs : polenta
+
+Préchauffez le four à 220°C.
+Recouvrez votre plaque de four de papier cuisson.
+Epluchez, lavez et coupez la patate douce en morceaux en forme de frites et déposez-les dans un saladier.
+Généralement je coupe mes frites dans le sens de la longueur et avec 1 centimètre de côté.
+Ajoutez l'ensemble des épices (paprika en poudre, piment doux) ainsi que l'ail en poudre et la polenta.
+Mélangez délicatement afin que les patates douces soient bien enrobées.
+Déposez-les ensuite sur le plaque de four.
+Enfournez 25 minutes ou plus si besoin, les morceaux vont devenir croustillants à l'extérieur et moelleux à l'intérieur.
+Dégustez dès la sortie du four.
+Dans le bol d'un mixeur, placez l'ensemble des ingrédients de la farce, à l'exception de la farine, du parmesan et du jus de citron.
+Mixez jusqu'à ce que la tout soit en petits morceaux (mais pas trop non plus).
+Transférez dans un saladier, ajoutez le jus de citron (l'équivalent d'une cuillère à soupe), la farine et la moitié du parmesan râpé. Mélangez à l'aide d'une fourchette jusqu'à ce que le tout soit bien homogène.
+A l'aide de vos mains, formez 16 boulettes de viande de poulet et déposez-les dans un plat.
+Dans 3 bols différents, placez la farine, l'œuf battu et la chapelure ainsi que le reste du parmesan râpé.
+Passez successivement chaque boulette de viande dans la farine, l'œuf battu puis la chapelure. Déposez dans un plat.
+Faites chauffer un bon filet d'huile dans une poêle puis déposez-y les boulettes de viande. Faites dorer toutes les faces pendant environ 10 à 15 minutes jusqu'à ce qu'elles soient bien dorées.
+Servez chaud en plat ou tiède en entrée ou apéritif.

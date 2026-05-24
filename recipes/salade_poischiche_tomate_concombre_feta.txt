@@ -1,0 +1,25 @@
+Salade pois chiche à la tomate, concombre et feta
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: yes
+
+265 : g : pois-chiche en boîte (égouttés)
+2 : tomate
+1 : concombre
+60 : g : feta
+0.5 : oignon rouge
+1 : pincée : piment
+15 : olives noires à la grecque
+4 : persil plat
+1 : jus de citron
+1 : huile d'olive
+
+Égouttez les pois-chiches, rincez-les et versez-les dans un saladier.
+Découpez les tomates, le concombre et la feta en petit dès. Ajoutez aux pois chiche.
+Coupez l'oignon cébette ou oignon rouge en petits tronçons et versez dans le saladier.
+Emiettez la feta et ajoutez à la salade. Ajoutez les olives noires et le persil plat ciselé.
+Assaisonnez bien, versez un filet d'huile d'olive et du jus de citron, mélangez et servez.

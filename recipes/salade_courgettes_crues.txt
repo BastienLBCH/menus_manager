@@ -1,0 +1,28 @@
+Salade de courgettes crues
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+1 : jus de citron
+1 : gousse d'ail pressée
+1 : càc : moutarde de Dijon
+0.5 : càc : miel
+8 : càs : huile d'olive
+1 : thym frais
+1 : échalotte
+3 : petites courgettes
+1 : Herbes fraîches (menthe, ciboulette, basilic)
+1 : copeaux parmesan
+
+
+Vinaigrette au citron : Dans un petit bol, fouettez ensemble le jus de citron, l'ail pressé, la moutarde, le sel, le poivre et le miel.
+Arroser d'huile d'olive en fouettant et continuer à fouetter jusqu'à ce que la vinaigrette soit émulsionnée.
+Ajoutez le thym et assaisonner selon votre goût.
+Salade de courgettes : Utilisez un épluche légumes pour couper les courgettes en fines lanières.
+Placez les tagliatelles de courgettes dans un saladier, mélangez un peu de vinaigrette au citron, puis transférez les courgettes dans un plat pour servir.
+Garnissez avec de l'échalote très finement émincée, les pignons de pin toastés ou les noisettes et les graines de sésame ainsi que la ciboulette, le basilic et quelques copeaux de parmesan.
+Arrosez de la fameuse vinaigrette au citron et assaisonnez selon votre goût.

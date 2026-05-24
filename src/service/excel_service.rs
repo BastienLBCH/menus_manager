@@ -303,12 +303,12 @@ pub fn read_recipe_from_sheet_range(
             &sheet_range,
             [cell_to_extract_coordinates.0, cell_to_extract_coordinates.1],
         ) {
+            i += 2;
+            position_in_pattern += 1;
             if position_in_pattern == recipe_pattern.len() {
                 recipe_is_extracted = true;
                 break;
             }
-            i += 2;
-            position_in_pattern += 1;
             continue;
         }
 

@@ -10,9 +10,9 @@ pub struct Ingredient {
 impl Ingredient {
     pub fn to_string(&self) -> String {
         if self.unit == WHOLE_INGREDIENT {
-            format!("{} : {}", self.quantity, self.quantity)
+            format!("{} : {}", self.quantity, self.name)
         } else {
-            format!("{} : {} : {}", self.quantity, self.unit, self.quantity)
+            format!("{} : {} : {}", self.quantity, self.unit, self.name)
         }
     }
 }

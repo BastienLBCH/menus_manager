@@ -56,7 +56,7 @@ impl Recipe {
         recipe_as_string.push_str(&separation);
         recipe_as_string.push_str(format!("Nombre de personnes : {} ", self.nbr_persons).as_str());
         recipe_as_string.push_str(&separation);
-        recipe_as_string.push_str(format!("Veggie {} ", if self.is_veggie {"Oui"} else {"Non"}).as_str());
+        recipe_as_string.push_str(format!("Veggie : {} ", if self.is_veggie {"Oui"} else {"Non"}).as_str());
         recipe_as_string.push_str(&separation);
 
         let mut i = 0;

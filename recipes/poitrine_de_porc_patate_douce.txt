@@ -1,0 +1,20 @@
+Poitrine de porc aux patates douces
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+1 : kg : poitrine de porc
+800 : g : patate douce 
+1 : cc : mélange 5 parfums
+3 : cs : sauce soja
+1 : cs : cassonade
+1 : cs : huile de tournesol
+
+1. Coupez la viande et les patates douces pelées en cubes. Dans un saladier, mélangez le porc avec les épices, la sauce soja, la cassonade et l'huile.
+2. Dans le Cookeo sur le mode dorer, faites caraméliser le contenu du saladier pendant 5 minutes environ. Ajoutez 15 cl d'eau.
+3. Lancez le mode sous pression pour 15 minutes.
+4. Ajoutez les patates douces, salez légèrement et poivrez. Prolongez la cuisson de 10 minutes. Servez parsemé de coriandre hachée.

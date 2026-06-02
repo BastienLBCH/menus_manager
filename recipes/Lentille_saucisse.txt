@@ -1,0 +1,18 @@
+Lentille saucisse
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+4 : saucisses
+2 : oignons
+4 : carottes
+250 : g : lardon
+360 : g : lentille
+
+Carotte et oignon dans cokes avec graisse de canard, faire revenir quelques minutes
+Ajouter 1 paquet de lardon puis 360g de lentille + 2,5 son volume en eau
+Cuisson 10 min sous pression 

@@ -1,4 +1,4 @@
-Saucisse purée
+Soupe aux oignons
 
 Nombre de personnes : 4
 
@@ -7,9 +7,11 @@ Nombre de personnes : 4
 # No: "false", "no", "non", "n", "f"
 Veggie: y
 
-8 : saucisses
-1 : kg : pomme de terre
-30 : g : beurre doux
-50 : cl : lait
+4 : oignons
+50 : g : graisse de canard
+500 : g : emmental ou conté
+16 : tranches de pain
+8 : gousses d'ail
 
-À VENIR
+A venir
+

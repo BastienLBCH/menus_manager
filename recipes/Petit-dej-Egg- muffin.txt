@@ -8,8 +8,8 @@ Nombre de personnes : 5
 Veggie: oui
 
 5 : muffins (ou pain bagel etc…) 
-5 : tranches : cheddar 
-5 : tranches : bacon
+5 : tranches : fromage coulant (cheddar à l'origine)
+5 : tranches : poulet (bacon à l'origine)
 1 : bloc : féta
 8 : œufs 
 20 : tomates cerises 

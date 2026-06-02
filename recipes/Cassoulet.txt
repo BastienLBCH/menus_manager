@@ -1,4 +1,4 @@
-Saucisse purée
+Cassoulet
 
 Nombre de personnes : 4
 
@@ -7,9 +7,7 @@ Nombre de personnes : 4
 # No: "false", "no", "non", "n", "f"
 Veggie: y
 
-8 : saucisses
-1 : kg : pomme de terre
-30 : g : beurre doux
-50 : cl : lait
+1 : boîte : cassoulet
 
-À VENIR
+A venir
+

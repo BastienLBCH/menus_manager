@@ -1,0 +1,17 @@
+Poulet au bouillon
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+1 : poulet
+4 : oignons
+12 : gousses : d'ail
+1 : cube : bouillon volaille ou légume 
+1 : boîte de petits pois
+
+A venir
+

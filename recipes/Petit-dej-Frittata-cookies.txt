@@ -5,7 +5,7 @@ Nombre de personnes : 6
 # Accepted values :
 # Yes: "true", "yes", "oui", "y", "o", "t"
 # No: "false", "no", "non", "n", "f"
-Veggie: non
+Veggie: oui
 
 4 : oeufs
 120 : g : skyr
@@ -14,7 +14,7 @@ Veggie: non
 1 : cc : poudre à lever
 0.5 : cc : sel
 70 : g : emmental ou compté
-90 : g : jambon de poulet
+90 : g : poulet (jambon de poulet à l'origine)
 1 : botte : basilic frais
 5 : tomates séchées à l'huile
 1 : Origan

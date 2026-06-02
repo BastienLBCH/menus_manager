@@ -1,0 +1,35 @@
+Wrap omelette
+
+Nombre de personnes : 1
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+1 : wrap maison
+50 : g : farine
+50 : g : fromage blanc
+0.25 : cc : sel
+2 : oeufs
+0.25 : poivron vert
+0.25 : poivron rouge
+0.25 : tomate
+0.25 : oignon
+75 : g : jambon blanc
+10 : g : champignon
+1 : cs : crème fraîche ou 10 ml
+10 : g : gruyère râpé
+1 : pincée : paprika
+1 : pincée : sel
+1 : pincée : poivre
+
+	1.Préparer les wraps maison :
+Mélanger la farine, le fromage blanc et le sel.
+Former une pâte, diviser en 4 boules(nombre de wrap souhaité j’ai fait 200g de farine et fromage blanc pour 4 wraps), étaler finement et cuire à la poêle 1 à 2 min par face.
+	2.Préparer la frittata :
+Dans un bol, battre les œufs avec la crème, le sel, le poivre et le paprika.
+Ajouter les légumes coupés en petits morceaux, le jambon et les champignons.
+	3.Cuisson :
+Verser la préparation dans un petit plat (ou directement sur un wrap si tu veux une base croustillante).
+Recouvrir de gruyère râpé et enfourner 25 min à 180°C.

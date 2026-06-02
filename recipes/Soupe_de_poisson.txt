@@ -1,0 +1,12 @@
+Soupe de poisson
+
+Nombre de personnes : 2
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+1 : L : soupe de poisson
+
+RAS

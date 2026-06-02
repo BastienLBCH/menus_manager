@@ -1,0 +1,22 @@
+ One pot de quinoa à la dinde et champignons
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+300 : g : filet de dinde
+50 : cl : bouillon volaille 
+250 : g : champignons
+2 : oignons 
+240 : g : quinoa
+2 : cs : huile d'olive
+20 : cl : crème fraîche
+ciboulette
+
+1. Dans le Cookeo sur le mode dorer, faites revenir pendant 3 minutes les oignons émincés dans l'huile d'olive. Retirez et réservez.
+2. Ajoutez la dinde coupée en cubes et faites-les revenir pendant 5 minutes. Ajoutez les champignons et les oignons, puis poursuivez la cuisson pendant 3 minutes.
+3. Versez le quinoa et le bouillon. Lancez le mode sous pression pour 10 minutes. À la fin de la cuisson, ajoutez la crème fraîche. Mélangez. Faites cuire pendant 2 minutes.
+4. Au moment de servir, parsemez de ciboulette ciselée.

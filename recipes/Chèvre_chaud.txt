@@ -1,0 +1,17 @@
+Chèvre chaud
+
+Nombre de personnes : 2
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+2 : pain de mie
+2 : tranches : chèvre
+4 : cs : miel 
+
+Disposer une tranche de chèvre sur chaque pain de mie
+Mettre au four pendant environ 8 min au four à 180°C.
+Ajouter 2 cc de miel
+Dégustez 

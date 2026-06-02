@@ -1,0 +1,13 @@
+Nuggets
+
+Nombre de personnes : 2
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+Nuggets
+Pâte
+
+AV

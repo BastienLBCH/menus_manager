@@ -1,0 +1,23 @@
+Chipolatas purée et brocolis
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+2 : échalotes
+1 : kg : PDT
+4 : portobello
+8 : chipolatas
+160 : g : crème épaisse
+16 : ml : huile d'olive truffée
+4 : cs : beurre
+500 : ml : bouillon légume
+2 : cs : huile d'olive
+1 : filet : lait
+2 : cc : moutarde
+ 
+A venir
+

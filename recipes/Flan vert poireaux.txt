@@ -1,0 +1,26 @@
+Flan vert poireaux
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+500 : g : poireaux verts
+3 : oeufs
+200 : ml : crème fraîche
+100 : ml : lait
+50 : g : emmental
+1 : càc : curry doux
+
+Coupez les verts de poireaux en fines lanières.
+Lavez-les soigneusement à l’eau froide pour enlever la terre.
+Faites-les revenir à feu doux dans une poêle avec un peu d’huile d’olive pendant 10 à 15 min, jusqu’à ce qu’ils deviennent tendres.
+Salez et poivrez légèrement.
+Préchauffer votre four à 180 °C (chaleur tournante).
+Dans un saladier, battez les œufs, ajoutez la crème et le lait, puis assaisonnez (sel, poivre, curry).
+Ajoutez les poireaux cuits et l’emmental puis mélangez bien
+Versez la préparation dans un moule à cake, à gratin.
+Faites cuire au bain-marie (moule posé dans un plat avec de l’eau chaude) pendant 35 à 40 min, jusqu’à ce que le flan soit pris et doré (ou 30-40 min au four directement en chaleur tournante)
+Laissez tiédir quelques minutes avant de démouler.

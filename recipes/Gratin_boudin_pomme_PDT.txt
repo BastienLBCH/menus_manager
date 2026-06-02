@@ -1,0 +1,25 @@
+Gratin boudin pomme PDT
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+3 : échalottes
+4 : boudins
+4 : pommes
+4 : PDT 
+150 : g : poivrons grillés
+40 : cl : crème liquide
+100 : g : emmental
+2 : pincées : muscade 
+
+Cuire les échalotes
+Faire revenir les boudins à la poêle
+Faire revenir dans du beurre les pommes
+Faire cuire à la vapeur les pomme de terre pendant 15 mins
+Mélanger la crème liquide, l'emmental et la muscade
+Mettre le tout dans un plat au four pendant 15 min à 180°C
+

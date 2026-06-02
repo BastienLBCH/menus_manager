@@ -1,0 +1,23 @@
+Chakchouka au chèvre.
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+3 : gousses d'ail
+2 : oignons
+1 : sachet : peril
+150 : g : poivrons grillés
+1 : paprika
+2 : paquet : chair de tomate
+200 : g : fromage de chèvre frais
+4 : petis pains
+2 : cc : sucre
+1 : cube : bouillon légume
+8 : oeufs
+2 : cs : huile d'olive 
+
+À VENIR

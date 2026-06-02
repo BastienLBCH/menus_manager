@@ -1,0 +1,50 @@
+Lapin chasseur
+
+Nombre de personnes : 6
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+1 : lapin
+3 : carottes
+3 : oignons
+150 : g : lardons fumés
+10 : champignons paris
+1 : dizaine : olives vertes
+1 : échalote
+4 : gousses d'ails 
+50 : cl : vin rouge
+1 : cs : fond de veau
+2 : cc : concentré de tomate
+Herbes de provinces
+2 : feuilles de laurier
+Persil
+
+Étape 1
+Faites chauffer une cocotte en fonte, mettez-y 1 cuillère à soupe d'huile d'olive et 1 noix de beurre, faites-y dorer les morceaux de lapin.
+
+Étape 2
+Retirez-les et mettez-les de côté.
+
+Étape 3
+Pendant que la viande dore, épluchez les carottes, l'ail et l'échalote, coupez en rondelles les carottes et en petits morceaux l'échalote et l'ail.
+
+Étape 4
+Lavez et essuyez les champignons, coupez les en lamelles.
+
+Étape 5
+Faites revenir les lardons avec les carottes, l'échalote, l'ail et les champignons.
+
+Étape 6
+Remettez la viande dans la cocotte, mouillez avec le vin, ajoutez les feuilles de laurier, les herbes de provence, le persil haché, le sel, le poivre, le fond de veau et le concentré de tomate.
+
+Étape 7
+Mélangez bien le tout.
+
+Étape 8
+Ajoutez un peu d'eau pour bien couvrir la viande, les olives et laissez mijoter à petit feu.
+
+Étape 9
+Servez avec des spaghetti ou des pommes de terre coupées en gros cubes que vous aurez fait frire.

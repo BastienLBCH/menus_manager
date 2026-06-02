@@ -1,0 +1,24 @@
+Salade perles de la mer
+
+Nombre de personnes : 6
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: y
+
+1 : concombre
+1 : pot : oeufs de lymphe
+250 : g : pâte ronde
+12 : surimi 
+4 : cas : crème fraîche
+0.5 : bouquet : aneth
+Sel
+Poivre
+
+
+Faites cuire les petites pâtes dans de l'eau bouillante puis les égoutter, les rincer à l'eau froide dans une passoire et les verser dans un saladier.
+Peler le concombre, le couper en quatre dans le sens de la longueur, enlever les pépins, couper les bâtons de concombre en petits dés puis les ajouter dans le saladier. Couper les bâtons de surimi et les ajouter au mélange.
+Ajouter sel, poivre, aneth et crème fraiche à votre goût et mélanger.
+Enfin ajouter les oeuf de saumon et mélanger doucement pour ne pas les écraser.
+Mettre au frigo et servir frais.

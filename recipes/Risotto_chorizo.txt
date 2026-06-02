@@ -1,0 +1,22 @@
+Risotto chorizo
+
+Nombre de personnes : 2
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+0.5 : cube bouillon volaille
+0.5 : cs : huile d'olive
+0.5 : oignon
+50 : g : chorizo
+100 : g : poivrons surgelés
+150 : g : riz risotto
+25 : g : parmesan 
+
+Versez l'huile dans une casserole. Faites revenir les oignons coupés en petits morceaux, le poivron et le riz 5 min environ.
+Délayez le bouillon cube de volaille dans 50 cl d'eau très chaude. Versez le bouillon progressivement en remuant avec une spatule en bois sur feux doux.
+(Le riz doit absorber le bouillon avant chaque ajout).
+Lorsque le riz est cuit, ajoutez le chorizo coupé en petits morceaux.
+Rectifiez l'assaisonnement. Servez le parmesan à part.

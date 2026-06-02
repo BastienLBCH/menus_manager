@@ -1,0 +1,26 @@
+Flan vert
+
+Nombre de personnes : 6
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+3 : cs : farine
+3.75 : bouquet : persil
+3 : pincées : sel
+30 : cl : lait
+300 : g : poireaux 
+2 : pincées : poivre
+9 : oeufs
+
+Éplucher les poireaux, les couper finement et les faire cuire à l’eau bouillante salée pendant 10 min.
+Les égoutter en les pressant bien entre les mains.
+Les mixer avec un demi-bouquet de persil. Réserver.
+Préchauffer le four à 180 °C (th. 6).
+Battre les œufs en omelette dans un saladier, ajouter la farine en mélangeant au fouet puis verser le lait peu à peu en continuant de mélanger.
+Ajouter enfin les poireaux mixés.
+Saler, poivrer.
+Verser dans des ramequins individuels beurrés.
+Faire cuire au bain-marie pendant 25 min.

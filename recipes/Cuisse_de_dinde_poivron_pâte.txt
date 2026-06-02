@@ -1,0 +1,18 @@
+Cuisse de dinde poivron et pâte
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+1 : cuisse de dinde 
+3 : oignons
+500 : g : poivrons surgelés
+400 : g : pâte
+
+Couper oignons, faire revenir les poivrons. 
+Couper la suisse en morceaux.
+Mettre dans un plat la viande, les oignons et les poivrons.
+Cuisson au four à 180°C pendant au moins 30 min.

@@ -5,7 +5,7 @@ Nombre de personnes : 4
 # Accepted values :
 # Yes: "true", "yes", "oui", "y", "o", "t"
 # No: "false", "no", "non", "n", "f"
-Veggie: y
+Veggie: n
 
 4 : boudins
 1.25 : kg : pomme de terre

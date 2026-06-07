@@ -1,0 +1,21 @@
+Omelette aux poivrons et feta
+
+Nombre de personnes : 2
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+6 : œufs
+1 : poivron
+100 : g : feta
+1 : càs : huile d'olive
+1 : pincée : sel
+1 : pincée : poivre
+
+Couper le poivron en fines lamelles et le faire revenir dans une poêle huilée à feu moyen pendant 5 minutes jusqu'à ce qu'il soit tendre.
+Battre les œufs en omelette, saler et poivrer.
+Verser les œufs battus sur les poivrons dans la poêle.
+Émietter la feta sur l'omelette en cours de cuisson.
+Laisser cuire à feu doux jusqu'à ce que l'omelette soit prise, puis plier et servir.

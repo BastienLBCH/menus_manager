@@ -1,0 +1,25 @@
+Salade été radis concombre tomate
+
+Nombre de personnes : 2
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: oui
+
+1 : salade verte
+2 : tomates noires
+1 : concombre
+1 : botte : radis
+1 : boîte : thon
+3 : cas : huile d'olive
+1 : cas : vinaigre
+1 : cac : moutarde
+1 : pincée : sel
+1 : pincée : poivre
+
+Laver et essorer la salade, la déposer dans un saladier.
+Couper les tomates en quartiers, le concombre en rondelles, les radis en rondelles.
+Ajouter tous les légumes et le thon égoutté sur la salade.
+Préparer la vinaigrette en mélangeant moutarde, vinaigre, huile, sel et poivre.
+Arroser de vinaigrette au moment de servir.

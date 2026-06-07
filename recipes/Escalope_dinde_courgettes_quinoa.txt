@@ -1,0 +1,22 @@
+Escalope de dinde aux courgettes et quinoa
+
+Nombre de personnes : 2
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+2 : escalopes : dinde
+2 : courgettes
+200 : g : quinoa
+1 : càs : huile d'olive
+1 : càc : herbes de Provence
+1 : pincée : sel
+1 : pincée : poivre
+
+Rincer le quinoa et le cuire dans 400 ml d'eau salée à feu moyen pendant 12 minutes jusqu'à absorption complète. Réserver.
+Couper les courgettes en rondelles ou en demi-rondelles.
+Faire chauffer l'huile d'olive dans une poêle à feu moyen-vif. Faire dorer les escalopes de dinde 4 à 5 minutes de chaque côté. Saler, poivrer. Réserver.
+Dans la même poêle, faire revenir les courgettes 5 à 7 minutes jusqu'à ce qu'elles soient tendres et légèrement dorées. Assaisonner avec les herbes de Provence, sel et poivre.
+Servir les escalopes avec les courgettes et le quinoa.

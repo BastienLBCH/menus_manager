@@ -1,0 +1,23 @@
+Poulet au curry coco, riz basmati
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+4 : filets : poulet
+1 : boîte : lait de coco
+2 : càs : pâte de curry
+1 : oignon
+300 : g : riz basmati
+1 : càs : huile d'olive
+1 : pincée : sel
+
+Émincer l'oignon et le faire revenir dans une grande poêle huilée à feu moyen jusqu'à ce qu'il soit translucide.
+Couper les filets de poulet en morceaux et les ajouter dans la poêle. Faire dorer sur toutes les faces.
+Ajouter la pâte de curry et mélanger pour bien enrober le poulet.
+Verser le lait de coco, saler et laisser mijoter à feu doux 15 minutes.
+Pendant ce temps, cuire le riz basmati selon les instructions du paquet.
+Servir le curry de poulet sur le riz.

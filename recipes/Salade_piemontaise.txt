@@ -1,0 +1,26 @@
+Salade piémontaise
+
+Nombre de personnes : 4
+
+# Accepted values :
+# Yes: "true", "yes", "oui", "y", "o", "t"
+# No: "false", "no", "non", "n", "f"
+Veggie: non
+
+600 : g : pommes de terre
+200 : g : lardons fumés
+4 : tranches : jambon blanc
+15 : Cornichon
+4 : œufs
+4 : tomates
+4 : càs : mayonnaise
+1 : càs : moutarde
+1 : pincée : sel
+1 : pincée : poivre
+
+Cuire les pommes de terre en robe des champs dans une grande casserole d'eau salée pendant 20 à 25 minutes. Les laisser refroidir, les éplucher et les couper en dés.
+Faire cuire les œufs durs 10 minutes dans l'eau bouillante. Les refroidir, les écaler et les couper en quartiers.
+Faire revenir les lardons à sec dans une poêle jusqu'à ce qu'ils soient dorés. Égoutter sur du papier absorbant.
+Couper les tomates en dés et le jambon blanc en lanières.
+Dans un grand saladier, mélanger la mayonnaise et la moutarde. Ajouter les pommes de terre, les lardons, le jambon, les tomates et mélanger délicatement.
+Disposer les quartiers d'œufs durs sur le dessus. Saler, poivrer et réserver au frais 30 minutes avant de servir.
